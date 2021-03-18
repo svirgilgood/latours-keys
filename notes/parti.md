@@ -7,6 +7,7 @@ classDiagram
   Person <|-- Customer : subclass
   Person <|-- Innovator : subclass
   Sign --|> Statement : subclass
+  Action <|-- Program : subclass
   Request --|> Statement : subclass
   Statement <|-- HotelManager : makes
   Person --|> Country : nationality
