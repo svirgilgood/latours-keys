@@ -55,7 +55,7 @@ classDiagram
     +size
   }
   class Key{
-    +status:returned/notreturned
+    +status returned/notreturned
 
   }
   class Sign{
