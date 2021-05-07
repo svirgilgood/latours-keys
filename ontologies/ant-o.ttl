@@ -5,22 +5,77 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
 @base <https://e2dubba.github.io/latours-keys/ontology> .
 
 <https://e2dubba.github.io/latours-keys/ontology> rdf:type owl:Ontology ;
                                                    owl:versionIRI <https://e2dubba.github.io/latours-keys/ontology/1.0.0> ;
-                                                   owl:imports rdf: ,
+                                                   owl:imports <file:/home/shawngoodwin/Documents/Notebooks/latours-keys/ontologies/schemaorg-current-http.ttl> ,
+                                                               rdf: ,
                                                                rdfs: ,
                                                                <http://www.w3.org/2002/07/owl> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  https://e2dubba.github.io/latours-keys/ontology/hasCarlessness
+<https://e2dubba.github.io/latours-keys/ontology/hasCarlessness> rdf:type owl:AnnotationProperty ;
+                                                                 rdfs:subPropertyOf <https://e2dubba.github.io/latours-keys/ontology/hasTemperament> .
+
+
+###  https://e2dubba.github.io/latours-keys/ontology/hasCitizenshipIn
+<https://e2dubba.github.io/latours-keys/ontology/hasCitizenshipIn> rdf:type owl:AnnotationProperty ;
+                                                                   rdfs:comment "refers to the country of official or perminant residence or residences"@en ;
+                                                                   rdfs:label "has citizenship"@en ;
+                                                                   rdfs:range <https://schema.org/Country> .
+
+
+###  https://e2dubba.github.io/latours-keys/ontology/hasMood
+<https://e2dubba.github.io/latours-keys/ontology/hasMood> rdf:type owl:AnnotationProperty ;
+                                                          rdfs:subPropertyOf <https://e2dubba.github.io/latours-keys/ontology/hasTemperament> .
+
+
+###  https://e2dubba.github.io/latours-keys/ontology/hasSavagery
+<https://e2dubba.github.io/latours-keys/ontology/hasSavagery> rdf:type owl:AnnotationProperty ;
+                                                              rdfs:subPropertyOf <https://e2dubba.github.io/latours-keys/ontology/hasTemperament> .
+
+
+###  https://e2dubba.github.io/latours-keys/ontology/hasTemperament
+<https://e2dubba.github.io/latours-keys/ontology/hasTemperament> rdf:type owl:AnnotationProperty .
+
+
+###  https://e2dubba.github.io/latours-keys/ontology/hasWillingness
+<https://e2dubba.github.io/latours-keys/ontology/hasWillingness> rdf:type owl:AnnotationProperty ;
+                                                                 rdfs:subPropertyOf <https://e2dubba.github.io/latours-keys/ontology/hasTemperament> .
+
 
 #################################################################
 #    Classes
 #################################################################
 
-###  https://e2dubba.github.io/latours-keys/ontology/Person
-<https://e2dubba.github.io/latours-keys/ontology/Person> rdf:type owl:Class ;
-                                                         rdfs:subClassOf owl:NamedIndividual ;
-                                                         rdfs:label "Person" .
+###  https://e2dubba.github.io/latours-keys/ontology#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf owl:NamedIndividual ;
+        rdfs:label "Person" ;
+        <https://e2dubba.github.io/latours-keys/ontology/hasCitizenshipIn> "" .
+
+
+###  https://e2dubba.github.io/latours-keys/ontology/ProgramCompliance
+<https://e2dubba.github.io/latours-keys/ontology/ProgramCompliance> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <https://schema.org/ActionAccessSpecification> ;
+                                                                    rdfs:comment "The threshold necessary for compliance to the program" .
+
+
+###  https://e2dubba.github.io/latours-keys/ontology/ProgramNonCompliance
+<https://e2dubba.github.io/latours-keys/ontology/ProgramNonCompliance> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <https://schema.org/ActionAccessSpecification> .
+
+
+###  https://e2dubba.github.io/latours-keys/ontology/Temperament
+<https://e2dubba.github.io/latours-keys/ontology/Temperament> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <https://schema.org/Intangible> ;
+                                                              rdfs:comment "The class of personal qualities that lend themselves to compliance or non-compliance to the program"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
