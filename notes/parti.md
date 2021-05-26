@@ -93,4 +93,8 @@ classDiagram
 # Notes
 
 - Why does he use the words _paradigmatic_ and _syntagmatic_ on page 108? What is the connection with ontologies? Is this something we can pull in?
--
+- Is the disposition (and factors related to that) are they actually _relationships_ between the actors?
+- Does this fit Latour's approach anyway?
+- Actors is the Union of (Actors and Actants)
+- person is a subclass of Actor
+- CustomerA hasSavageRelationship :Program could be established based on properties
