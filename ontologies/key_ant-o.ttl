@@ -1,0 +1,186 @@
+@prefix ant: <https://e2dubba.github.io/latours-keys/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix gist: <https://ontologies.semanticarts.com/gist/> .
+
+
+<https://e2dubba.github.io/latours-keys/ontology> rdf:type owl:Ontology ;
+                                                   owl:versionIRI <https://e2dubba.github.io/latours-keys/ontology/1.0.0> ;
+                                                   owl:imports rdf: ,
+                                                               rdfs: ,
+                                                               <http://www.w3.org/2002/07/owl> ,
+                                                               gist: .
+
+
+##################################################################################################
+#
+# the Classes for Latour's Hotel Key Example
+#
+###################################################################################################
+
+
+# Actors and Actancts
+ant:Actor
+  a owl:Class
+  ; a owl:NamedIndividual
+  ; skos:definition "Both Human and and Non-Human individuals that interact in the system"@en
+  ; skos:prefLabel "Actor/Actant"@en
+  .
+
+## Human Actors
+ant:HumanActor
+  a owl:Class
+  ; rdfs:subClassOf ant:Actor
+  ; skos:definition "A Human Actor in the system"@en
+  ; skos:prefLabel "Human Actor"@en
+  .
+
+ant:HotelManager
+  a owl:Class
+  ; rdfs:subClassOf ant:Actor
+  ; rdfs:subClassOf gist:Person
+  ; skos:definition "A person who has a program, and wants to inact it"@en
+  ; skos:editorialNote "I think this might should be more general. For all those who want to enact a program?"@en
+  ; skos:prefLabel "Hotel Manager"@en
+  .
+
+ant:Customer
+  a owl:Class
+  ; rdfs:subClassOf gist:Person
+  ; rdfs:subClassOf ant:HumanActor
+  ; skos:definition "A person who is renting a room in the hotel"@en
+  .
+
+ant:Innovator
+  a owl:Class
+  ; rdfs:subClassOf gist:Person
+  ; rdfs:subClassOf ant:Actor
+  ; skos:definition "Some one who creates, fabricates, or adapts materials"@en
+  .
+
+
+## Non-Human Actants
+ant:Actant
+  a owl:Class
+  ; rdfs:subClassOf ant:Actor
+  ; skos:definition "A Non-Human Actor in the system"@en
+  ; skos:prefLabel "Actant"@en
+  .
+
+
+# Origin info
+
+ant:LanguageFluency
+  a owl:Class
+  ; skos:definition "Defines the level of knowlege an actor has about a specified language"@en
+  ; skos:prefLabel "Language Fluency"@en
+  .
+
+
+# The Program
+ant:Program
+  a owl:Class
+  ; rdfs:comment "How would Latour define Program? The course of action an actor places on other actors in the system?"@en
+  .
+
+ant:ProgramDisposition
+  a owl:Class
+  ; skos:definition "The way an actor relates to a program"@en
+  ; skos:prefLabel "Program Disposition"@en
+  .
+
+ant:Goal
+  a owl:Class
+  ; skos:definition "The goal is the ideal state of the program, which actors and which actants, current behavior, and target behavior, locations"@en
+  ; skos:prefLabel "Goal"@en
+  .
+
+ant:Mood
+  a owl:Class
+  ; rdfs:comment "The different types of dispositions that impact a way a human actor relates to a program"@en
+  ; skos:prefLabel "Mood"@en
+  .
+
+ant:Savagery
+  a owl:Class
+  ; rdfs:subClassOf ant:Mood
+  ; rdfs:comment "An actors predisposition to the savagery, especially as it relates to a given program"@en
+  ; skos:prefLabel "Savagery"@en
+  .
+
+ant:Carelessness
+  a owl:Class
+  ; rdfs:subClassOf ant:Mood
+  ; rdfs:comment "An actors predisposition to carelessness, especially as it relates to a given program"@en
+  ; skos:prefLabel "Carelessness"@en
+  .
+
+ant:Willingness
+  a owl:Class
+  ; rdfs:subClassOf ant:Mood
+  ; rdfs:comment "An actors willingness to go with another actors program"@en
+  ; skos:prefLabel "Willingness"@en
+  ; skos:editorialNote "Perhaps there should be a inverse relationship to resistence, but I think marking willingness is helpful enough"@en
+  .
+
+
+################################################################
+#
+# The Annotation Properties
+#
+################################################################
+
+ant:administratesProgram
+  a rdf:AnnotationProperty
+  ; rdfs:comment "the one who creates and oversees the action of a program"@en
+  ; skos:prefLabel "administrates program"@en
+  .
+
+ant:hasLanguageFluency
+  a rdf:AnnotationProperty
+  ; rdfs:comment "asserting that an actor has a fluency in a particular language"@en
+  ; skos:prefLabel "has language fluency"@en
+  .
+
+ant:hasProgramDisposition
+  a rdf:AnnotationProperty
+  ; rdfs:comment "the way an actor relates to a program"@en
+  ; skos:prefLabel "has program disposition"@en
+  .
+
+ant:inactedDisposition
+  a rdf:AnnotationProperty
+  ; rdfs:comment "the disposition towards a particular program or anti-program"@en
+  ; skos:prefLabel "inacted disposition"@en
+  .
+
+ant:inherentDisposition
+  a rdf:AnnotationProperty
+  ; rdfs:comment "the level of the mood. measured from -10 to 10"@en
+  ; rdfs:comment 'this is more like a stat level in D&D, something that sees realization only when added to a dice roll'@en
+  ; skos:prefLabel "inherent disposition"@en
+  .
+
+ant:relationToProgram
+  a rdf:AnnotationProperty
+  ; rdfs:comment "An actor's relationship towards a program"@en
+  ; skos:prefLabel "relation to program"@en
+  .
+
+ant:residesIn
+  a rdf:AnnotationProperty
+  ; rdfs:comment "which country an actor resides"@en
+  ; skos:prefLabel "resides in"@en
+  .
+
+ant:withMood
+  a rdf:AnnotationProperty
+  ; rdfs:comment "Specifying which mood a given program disposition is referencing"@en
+  ; skos:prefLabel "with mood"@en
+  .
+
+

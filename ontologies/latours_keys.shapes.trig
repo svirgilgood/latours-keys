@@ -1,0 +1,119 @@
+@prefix ant: <https://e2dubba.github.io/latours-keys/ontology/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix gist: <https://ontologies.semanticarts.com/gist/> .
+
+@prefix lks: <https://e2dubba.github.io/latours-keys/shapes/> .
+
+lks:DispositionShape {
+  lks:DispositionShape a sh:NodeShape
+  ; sh:targetClass ant:Disposition
+  ; sh:property [
+    sh:path ant:withMood
+    ; sh:class ant:Mood
+    ; sh:minCount 1
+    ; sh:maxCount 1
+    ; sh:order 2
+  ]
+  ; sh:property [
+    sh:path ant:disposition
+    ; sh:datatype xsd:integer
+    ; sh:minValue -10
+    ; sh:maxValue 10
+    ; sh:minCount 1
+    ; sh:maxCount 1
+    ; sh:order 3
+  ]
+
+  ]
+}
+
+lks:ProgramDispositionShape {
+  # Inacted Disposition?
+  lks:ProgramDispositionShape a sh:NodeShape
+  ; sh:targetClass ant:ProgramDisposition
+  ; sh:property [
+    sh:path ant:targetProgram
+    ; sh:class ant:Program
+    ; sh:minCount 1
+    ; sh:maxCount 1
+    ; sh:order 1
+  ]
+  ; sh:property [
+    sh:path ant:inactedDisposition
+    ; sh:node lks:DispositionShape
+    ; rdfs:comment "A node link to the disposition shape"@en
+  ]
+  ; sh:property [
+    sh:path [
+      sh:inversePath ant:hasProgramDisposition
+    ]
+    ; sh:minCount 1
+    ; sh:maxCount 1
+  ]
+}
+
+lks:LanguageFluencyShape {
+  lks:LanguageFluency a sh:NodeShape
+  ; sh:targetClass ant:LanguageFluency
+  ; sh:property [
+    sh:path schema:knowsLanguage
+    ; sh:class schema:Language
+    ; sh:minCount 1
+    ; sh:maxCount 1
+    ; sh:order 1
+  ]
+  ; sh:property [
+    sh:path ant:fluencyLevel
+    ; sh:datatype xsd:integer
+    ; sh:minValue 1
+    ; sh:maxValue 10
+    ; rdfs:comment "on a scale from 1 to 10"@en
+    ; sh:minCount 1
+    ; sh:maxCount 1
+  ]
+}
+
+lks:HumanActorShape {
+  lks:HumanActorShape a sh:NodeShape
+  ; sh:targetClass ant:HumanActor
+   ; sh:property [
+    sh:path gist:name
+    ; sh:datatype xsd:string
+    ; sh:minCount 1
+    ; sh:maxCount 1
+    ; sh:order 1
+  ]
+  ; sh:property [
+    sh:path ant:inherentDisposition
+    ; sh:class ant:Disposition
+  ]
+  ; rdfs:comment "Do we need to include more categories?"
+}
+
+lks:CustomerShape {
+  lks:CustomerShape a sh:NodeShape
+  ; sh:targetClass ant:Customer
+  ; sh:property [
+    sh:path ant:residesIn
+    ; sh:class gist:GeoPoliticalRegion
+    ; sh:order 10
+  ]
+  ; sh:property [
+    sh:path ant:hasProgramDisposition
+    ; skos:editorialNote "Does a customer have dispositions _before_ they interact with a program? Each program interaction is going to have a different set of dispositions, but do we need to model their internal dispositions? Can we? What other factors go into creating this disposition?"@en
+    ; sh:node lks:ProgramDispositionShape
+    ; sh:order 3
+  ]
+  ; sh:property [
+    sh:path ant:hasLanguageFleuncy
+    ; sh:node lks:LanguageFluencyShape
+    ; sh:order 4
+  ]
+  .
+}
+

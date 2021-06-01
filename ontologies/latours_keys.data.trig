@@ -1,0 +1,47 @@
+@prefix ant: <https://e2dubba.github.io/latours-keys/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix gist: <https://ontologies.semanticarts.com/gist/> .
+
+@prefix : <https://e2dubba.github.io/latours-keys/data/> .
+
+
+:_PierresKeys
+  a ant:Program
+  .
+
+:_JohnSmithsAttitudeTowardsKeysSavagery
+  a ant:ProgramDisposition
+  ; ant:targetProgram :_PierresKeys
+  ; ant:withMood ant:Savagery
+  ; ant:disposition 7
+  .
+
+:_JohnSmithsAttitudeTowardsKeysCarelessness
+  a ant:ProgramDisposition
+  ; ant:targetProgram :_PierresKeys
+  ; ant:withMood ant:Carelessness
+  ; ant:disposition 1
+  .
+
+:_JohnSmithsAttitudeTowardsKeysWillingness
+  a ant:ProgramDisposition
+  ; ant:targetProgram :_PierresKeys
+  ; ant:withMood ant:Willingness
+  ; ant:disposition -7
+  .
+
+
+:_JohnSmith a ant:Cutomer
+  ; gist:name "John Smith"^^xsd:string
+  ; ant:residesIn :_Virgina
+  ; ant:hasProgramDisposition :_JohnSmithsAttitudeTowardsKeysSavagery
+  ; ant:hasProgramDisposition :_JohnSmithsAttitudeTowardsKeysCarelessness
+  ; ant:hasProgramDisposition :_JohnSmithsAttitudeTowardsKeysWillingness
+  ; ant:speaks :_Southern
+  .
+
