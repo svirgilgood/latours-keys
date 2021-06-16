@@ -24,7 +24,7 @@
 
 
 # Actors and Actancts
-ant:Actor
+ant:Actant
   a owl:Class
   ; a owl:NamedIndividual
   ; skos:definition "Both Human and and Non-Human individuals that interact in the system"@en
@@ -34,14 +34,14 @@ ant:Actor
 ## Human Actors
 ant:HumanActor
   a owl:Class
-  ; rdfs:subClassOf ant:Actor
+  ; rdfs:subClassOf ant:Actant
   ; skos:definition "A Human Actor in the system"@en
   ; skos:prefLabel "Human Actor"@en
   .
 
 ant:HotelManager
   a owl:Class
-  ; rdfs:subClassOf ant:Actor
+  ; rdfs:subClassOf ant:Actant
   ; rdfs:subClassOf gist:Person
   ; skos:definition "A person who has a program, and wants to inact it"@en
   ; skos:editorialNote "I think this might should be more general. For all those who want to enact a program?"@en
@@ -58,15 +58,15 @@ ant:Customer
 ant:Innovator
   a owl:Class
   ; rdfs:subClassOf gist:Person
-  ; rdfs:subClassOf ant:Actor
+  ; rdfs:subClassOf ant:HumanActor
   ; skos:definition "Some one who creates, fabricates, or adapts materials"@en
   .
 
 
 ## Non-Human Actants
-ant:Actant
+ant:NonHumanActant
   a owl:Class
-  ; rdfs:subClassOf ant:Actor
+  ; rdfs:subClassOf ant:Actant
   ; skos:definition "A Non-Human Actor in the system"@en
   ; skos:prefLabel "Actant"@en
   .
@@ -93,14 +93,24 @@ ant:ProgramDisposition
   ; skos:prefLabel "Program Disposition"@en
   .
 
-ant:Goal
+
+ant:Intention
   a owl:Class
   ; skos:definition "The goal is the ideal state of the program, which actors and which actants, current behavior, and target behavior, locations"@en
-  ; skos:prefLabel "Goal"@en
+  ; skos:prefLabel "Intention"@en
   .
+
+ant:State
+  a owl:Class
+  ; skos:definition "The final state, position, location or mood the program is hoping to achieve"@en
+  ; skos:prefLabel "State"@en
+  .
+
+## Attitudes and Dispositions (especially in regard to the program)
 
 ant:Mood
   a owl:Class
+  ; owl:subClassOf ant:State
   ; rdfs:comment "The different types of dispositions that impact a way a human actor relates to a program"@en
   ; skos:prefLabel "Mood"@en
   .
@@ -123,7 +133,7 @@ ant:Willingness
   a owl:Class
   ; rdfs:subClassOf ant:Mood
   ; rdfs:comment "An actors willingness to go with another actors program"@en
-  ; skos:prefLabel "Willingness"@en
+  ; skos:prefLabel "Willingness"@e
   ; skos:editorialNote "Perhaps there should be a inverse relationship to resistence, but I think marking willingness is helpful enough"@en
   .
 
@@ -134,10 +144,23 @@ ant:Willingness
 #
 ################################################################
 
+ant:adheresTo
+  a rdf:AnnotationProperty
+  ; rdfs:comment "inverse of has adherents"
+  ; skos:prefLabel "adheres to"@en
+  .
+
 ant:administratesProgram
   a rdf:AnnotationProperty
   ; rdfs:comment "the one who creates and oversees the action of a program"@en
   ; skos:prefLabel "administrates program"@en
+  .
+
+ant:hasAdherents
+  a rdf:AnnotationProperty
+  ; rdfs:comment "The acatants that are part of a given program"@en
+  ; skos:editorialNote "needs an inverse property"@en
+  ; skos:prefLabel "has adherents"@en
   .
 
 ant:hasLanguageFluency
@@ -150,6 +173,13 @@ ant:hasProgramDisposition
   a rdf:AnnotationProperty
   ; rdfs:comment "the way an actor relates to a program"@en
   ; skos:prefLabel "has program disposition"@en
+  .
+
+ant:hasVersion
+  a rdf:AnnotationProperty
+  ; rdfs:comment "linking the program to a goal or behavioral change the program architect wishes on the system"@en
+  ; skos:editorialNote "Does this need a domain? a range"@en
+  ; skos:prefLabel "has version"@en
   .
 
 ant:inactedDisposition

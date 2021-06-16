@@ -12,6 +12,7 @@
 
 :_PierresKeys
   a ant:Program
+  ; 
   .
 
 :_JohnSmithsAttitudeTowardsKeysSavagery
@@ -45,3 +46,10 @@
   ; ant:speaks :_Southern
   .
 
+:_HotelManagersIntention a ant:Intention 
+  ; ant:fromPerspectiveOF :_HotelManagerPierre 
+  ; ant:primaryConcern :_AllHisHotelKeys 
+  ; ant:desiredEndState [
+    :concernedActant :_keys 
+     ; :residesAt :_FrontDesk
+  ]

@@ -9,12 +9,102 @@
 
 @prefix lks: <https://e2dubba.github.io/latours-keys/shapes/> .
 
+# How Do we model an Action?
+
+lks:EndStateShape {
+  lks:EndStateShape a sh:NodeShape
+    ; sh:targetClass ant:State
+    ; rdfs:comment 'This is more about the desired state and/or location at the conclusions of the program'@en
+    ; rdfs:comment "we can't model the action, but we can model the desired outcome"@en
+    ; rdfs:comment "though, maybe we should think about modeling Stored Procedures"@en
+    ; rdfs:comment "should we call it desired outcome? Maybe just the path will be desried outcome"@en
+    ; rdfs:comment 'use qualified value'@en
+  ; sh:property [
+
+
+  ]
+}
+
+lks:IntentionShape {
+  lks:IntentionShape a sh:NodeShape
+    ; sh:targetClass ant:Intention
+    ; rdfs:comment "the intention or goal of the program"@en
+    ; rdfs:comment '''
+    Keys:
+      - Manager wants Patrons to return key to desk.
+      - Room Lock wants to keep Actants out who do not have authorization .
+      -- Room Locks have mood: how sticky or obstinate they are
+      - What about when phones replace keys?
+    Camera: Kodak wants People to buy camera.
+    Scallops:
+      - Scientist want to revitilze Scallop population.
+      -- Scientists want scallops to thrive .
+      - Fishermen want sustainable income.
+      - Towns people want more tourists (not in this example, but in another ecology example)
+    '''
+    ; rdfs:comment '''
+    Intention is about someone
+    who wants something
+    to be someplace/in a state (can we generalize it to state?)
+    ## State of Afairs
+    ## A disposition
+    ## Anything that could be set up as a relationship
+    '''
+    ; sh:property [
+      sh:path ant:fromPerspectiveOF
+      ; sh:class ant:Actant
+      ; sh:name "From Perspective Of"@en
+      ; sh:description "The author of the program "@en
+      ; sh:minCount 1
+      ; skos:editorialNote "Maybe this should be about a particular target class, and it can have multiple actants as the perspective"@en
+    ]
+    ; sh:property [
+      sh:path ant:concernedAbout
+      ; sh:class ant:Actant
+      ; sh:minCount 1
+    ]
+    ; sh:property [
+      sh:path ant:desiredEndState
+      ; sh:class ant:State
+
+    ]
+    .
+
+}
+
+lks:ProgramShape {
+  lks:ProgramShape a sh:NodeShape
+    ; sh:targetClass ant:Program
+    ; rdfs:comment "The program is the intention of an actor concerning other actants"@en
+    ; skos:editorialNote "a program is view or perspective of the network, a vantage point"@en
+    ; skos:editorialNote "The implementation of versioning for this example could be either used with RDF* or by refering to the versions with Named Graphs, neither of these are dependent on the shape, but will change with implementation"@en
+    ; sh:property [
+      sh:path ant:hasIntention
+        ; sh:class ant:Intention
+        ; rdfs:comment "The intention is the goal or behaviorial change, the program architect of the program wishes on the system"@en
+    ]
+    ; sh:property [
+      sh:path ant:hasAdherents
+        ; sh:class ant:Actant
+        ; rdfs:comment "This includes both human and non-human actors, as well as the program architect"@en
+    ]
+    ; sh:property [
+      sh:path ant:hasVersion
+        ; sh:datatype xsd:integer
+        ; sh:minCount 1
+        ; sh:maxCount 1
+        ; rdfs:comment "The number of iterations a program goes through and the changes it makes"@en
+    ]
+}
+
 lks:DispositionShape {
   lks:DispositionShape a sh:NodeShape
   ; sh:targetClass ant:Disposition
   ; sh:property [
     sh:path ant:withMood
     ; sh:class ant:Mood
+    ; sh:name "Mood"@en
+    ; sh:description "Different measures of willingness that an actant has towards a program"
     ; sh:minCount 1
     ; sh:maxCount 1
     ; sh:order 2
@@ -27,8 +117,6 @@ lks:DispositionShape {
     ; sh:minCount 1
     ; sh:maxCount 1
     ; sh:order 3
-  ]
-
   ]
 }
 
@@ -115,5 +203,14 @@ lks:CustomerShape {
     ; sh:order 4
   ]
   .
+}
+
+lks:HotelManagerShape {
+  lks:HotelManagerShape a sh:NodeShape
+  ; sh:targetClass ant:HotelManager
+  ; sh:property [
+    sh:path ant:administratesProgram
+    ; sh:class ant:Program
+  ]
 }
 
