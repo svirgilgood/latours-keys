@@ -267,4 +267,39 @@ lks:KeyShape {
     sh:path ant:fitsRoom
     ; sh:class ant:HotelRoom
   ]
+  ; sh:property [
+    sh:path ant:fitsRoom
+    ; sh:class ant:HotelRoom
+  ]
+  .
+}
+
+lks:SignShape {
+  lks:SignShape a sh:NodeShape
+  ; sh:targetClass ant:Sign
+  ; sh:property [
+    sh:path schema:inLanguage
+    ; sh:class schema:Language
+  ]
+  ; sh:property [
+    sh:path ant:hasMessage
+    ; sh:class ant:Message
+  ]
+  .
+}
+
+lks:WeightShape {
+  lks:WeightShape a sh:NodeShape
+  ; sh:targetClass ant:Weight
+  ; sh:property [
+    sh:path ant:hasMassInKg
+    ; sh:datatype xsd:decimal
+    ; sh:minCount 1
+    ; sh:maxCount 1
+  ]
+  ; sh:property [
+    sh:path ant:connectedTo
+    ; sh:class ant:Actant
+    ; rdfs:comment "for our example, the weights are connected to something, but they don't have to be."@en
+  ]
 }

@@ -34,12 +34,38 @@
   a ant:Key
   ; ant:fitsRoom :_Room1
   ; skos:prefLabel "Key 1"@en
+  ; ant:connectedTo [
+    a ant:Weight
+    ; ant:hasMassInKg .1
+  ]
   .
 
 :_HotelKey_2
   a ant:Key
   ; ant:fitsRoom :_Room2
   ; skos:prefLabel "Key 2"@en
+  ; ant:connectedTo [
+    a ant:Weight
+    ; ant:hasMassInKg .1
+  ]
+  .
+
+:_ReturnKeyMessage
+  a ant:Message
+  ; skos:prefLabel "Please Return Message"@en
+  ; schema:inLanguage :_GermanLanguage
+  ; schema:inLanguage :_EnglishLanguage
+  ; schema:inLanguage :_DutchLanguage
+  ; schema:inLanguage :_FrenchLanguage
+  ; gist:containedText "Please return hotel key to front desk when you leave for the day"@en
+  ; gist:containedText "Sie den Hotelschlüssel an der Rezeption ab, wenn Sie für den Tag abreisen"@de
+  .
+
+
+:_PleaseReturnSign
+  a ant:Sign
+  ; skos:prefLabel "Please Return Sign"@en
+  ; ant:hasMessage :_ReturnKeyMessage
   .
 
 :_ReturnKeysToDesk
@@ -59,9 +85,10 @@
   a ant:Program
   ; ant:hasIntention :_ReturnKeysToDesk
   ; ant:hasAdherent :_PierreTheManager
-  # ; ant:hasAdherent :_Sign
-  # ; ant:hasAdherent :_Weight
-  # ; ant:hadAdherent :_CompliantCustomerJane
+  ; ant:hasAdherent :_PleaseReturnSign
+  # once weights are added to the keys, the keys become adherents to the program
+  # ; ant:hasAdherent :_HotelKey_1
+  # ; ant:hasAdherent :_HotelKey_2
   ; ant:hasVersion 1
   .
 
@@ -85,7 +112,7 @@
   .
 
 ####################################################################
-# Hotel Manager
+# Hotel Manager and Innovator
 ####################################################################
 
 :_PierreTheManager
@@ -130,6 +157,7 @@
   ; ant:administratesProgram :_PierresKeys
   .
 
+# Innovator
 :_GabrielleVanAalsburg
   a ant:Innovator
   ; ant:residesIn :_Belgium
@@ -300,6 +328,7 @@
 #
 #################################################################
 
+# Geo regions
 :_Virgina
   a gist:GeoPoliticalRegion
   ; skos:prefLabel "Virginia"@en

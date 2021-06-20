@@ -86,6 +86,13 @@ ant:Key
   ; skos:definition "an instrument used to an unlock a door"@en
   .
 
+ant:Message
+  a owl:Class
+  ; rdfs:subClassOf ant:NonHumanActant
+  ; rdfs:comment "A linguistic communictation of the program"@en
+  ; skos:prefLabel "Message"@en
+  .
+
 ant:Sign
   a owl:Class
   ; rdfs:subClassOf ant:NonHumanActant
@@ -167,6 +174,7 @@ ant:concernedAbout
 ant:connectedTo
   a owl:ObjectProperty
   ; rdfs:comment "this refers to a physical connection between two objects"@en
+  ; skos:editorialNote "this should probably be a transitive property"@en
   ; skos:prefLabel "connected to"@en
   .
 
@@ -215,6 +223,14 @@ ant:hasLanguageFluency
   a owl:ObjectProperty
   ; rdfs:comment "asserting that an actor has a fluency in a particular language"@en
   ; skos:prefLabel "has language fluency"@en
+  .
+
+ant:hasMessage
+  a owl:ObjectProperty
+  ; owl:range ant:Message
+  ; rdfs:range rdf:langString
+  ; rdfs:comment "the message intended to communicate something"@en
+  ; skos:prefLabel "has message"@en
   .
 
 ant:hasProgramDisposition
@@ -278,13 +294,21 @@ ant:withMood
 
 ################################################################
 #
-# The Annotation Properties
+# The Datatype Properties
 #
 ################################################################
 
+
 ant:dispositionLevel
-  a rdf:AnnotationProperty
+  a owl:DatatypeProperty
   ; rdfs:range xsd:integer
   ; rdfs:comment "a measure of a moods disposition to a program, from -10 to 10"@en
-  ; skos:prefLabel "disposition"
+  ; skos:prefLabel "disposition"@en
+  .
+
+ant:hasMassInKg
+  a owl:DatatypeProperty
+  ; rdfs:range xsd:decimal
+  ; rdfs:comment "the mass of an item in killograms"@en
+  ; skos:prefLabel "has mass in kilograms"@en
   .
