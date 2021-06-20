@@ -1,4 +1,4 @@
-@prefix ant: <https://e2dubba.github.io/latours-keys/ontology/> .
+@prefix ant: <https://e2dubba.github.io/latours-keys/ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -66,6 +66,13 @@ ant:Innovator
 
 ## Non-Human Actants
 
+ant:NonHumanActant
+  a owl:Class
+  ; rdfs:subClassOf ant:Actant
+  ; skos:definition "Non-Human Actant"@en
+  ; skos:prefLabel "Non Human Actant"
+  .
+
 ant:HotelRoom
   a owl:Class
   ; rdfs:subClassOf ant:NonHumanActant
@@ -99,7 +106,6 @@ ant:LanguageFluency
   ; skos:prefLabel "Language Fluency"@en
   .
 
-
 # The Program
 ant:Program
   a owl:Class
@@ -111,7 +117,6 @@ ant:ProgramDisposition
   ; skos:definition "The way an actor relates to a program"@en
   ; skos:prefLabel "Program Disposition"@en
   .
-
 
 ant:Intention
   a owl:Class
@@ -134,7 +139,6 @@ ant:Mood
   ; rdfs:comment "the specific moods are actually instances and not subclasses"
   ; skos:prefLabel "Mood"@en
   .
-
 
 ################################################################
 #

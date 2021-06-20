@@ -1,4 +1,4 @@
-@prefix ant: <https://e2dubba.github.io/latours-keys/ontology/> .
+@prefix ant: <https://e2dubba.github.io/latours-keys/ontology/v1#> .
 @prefix sh:    <http://www.w3.org/ns/shacl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -25,9 +25,6 @@ lks:EndStateShape {
 
   ]
 }
-
-
-
 
 lks:IntentionShape {
   lks:IntentionShape a sh:NodeShape
@@ -70,7 +67,6 @@ lks:IntentionShape {
     ; sh:property [
       sh:path ant:desiredEndState
       ; sh:class ant:State
-
     ]
     .
 }
@@ -182,6 +178,7 @@ lks:HumanActorShape {
   ; sh:property [
     sh:path ant:inherentDisposition
     ; sh:class ant:Disposition
+    ; rdfs:comment "The inherent disposition is not really about modeling the key example, its about crating a future automated example"@en
   ]
   ; rdfs:comment "Do we need to include more categories?"
 }
@@ -232,7 +229,7 @@ lks:ReservationShape {
   ]
   ; sh:property [
     sh:path gist:acutalEnd
-    ; sh:datatype xsd:datatime
+    ; sh:datatype xsd:datetime
     ; sh:order 2
   ]
   ; sh:property [
@@ -243,13 +240,12 @@ lks:ReservationShape {
   .
 }
 
-
 lks:HotelRoomShape {
   lks:HotelRoomShape a sh:NodeShape
   ; sh:targetClass ant:HotelRoom
   ; sh:property [
     sh:path skos:prefLabel
-    ; sh:datatype rdfs:langString
+    ; sh:datatype rdf:langString
     ; sh:order 1
   ]
   ; sh:property [
@@ -268,6 +264,7 @@ lks:KeyShape {
   lks:KeyShape a sh:NodeShape
   ; sh:targetClass ant:Key
   ; sh:property [
-    sh:path ant:
+    sh:path ant:fitsRoom
+    ; sh:class ant:HotelRoom
   ]
 }

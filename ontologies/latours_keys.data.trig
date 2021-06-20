@@ -9,9 +9,7 @@
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 @prefix gist: <https://ontologies.semanticarts.com/gist/> .
 
-@prefix : <https://e2dubba.github.io/latours-keys/data/> .
-
-
+@prefix : <https://e2dubba.github.io/latours-keys/data#> .
 
 
 :_OnHotelDesk
@@ -26,32 +24,45 @@
   ; skos:prefLabel "Room 1"@en
   .
 
+:_Room2
+  a ant:HotelRoom
+  ; ant:hasKey :_HotelKey_2
+  ; skos:prefLabel "Room 2"@en
+  .
+
 :_HotelKey_1
   a ant:Key
   ; ant:fitsRoom :_Room1
   ; skos:prefLabel "Key 1"@en
   .
 
+:_HotelKey_2
+  a ant:Key
+  ; ant:fitsRoom :_Room2
+  ; skos:prefLabel "Key 2"@en
+  .
+
 :_ReturnKeysToDesk
   a ant:Intention
-  ; ant:fromPerspectiveOf :_Pierre
+  ; ant:fromPerspectiveOf :_PierreTheManager
   ; ant:concernedAbout :_HotelKey_1
   ; ant:concernedAbout :_HotelKey_2
-  ; ant:concernedAbout :_HotelKey_3
-  ; ant:concernedAbout :_HotelKey_4
-  ; ant:concernedAbout :_HotelKey_5
-  ; ant:concernedAbout :_HotelKey_6
-  ; ant:concernedAbout :_HotelKey_7
+  # ; ant:concernedAbout :_HotelKey_3
+  # ; ant:concernedAbout :_HotelKey_4
+  # ; ant:concernedAbout :_HotelKey_5
+  # ; ant:concernedAbout :_HotelKey_6
+  # ; ant:concernedAbout :_HotelKey_7
   ; ant:desiredEndState :_OnHotelDesk
   .
 
 :_PierresKeys
   a ant:Program
   ; ant:hasIntention :_ReturnKeysToDesk
-  ; ant:hasAdherent :_Pierre
-  ; ant:hasAdherent :_Sign
-  ; ant:hasAdherent :_Weight
-  ; ant:hadAdherent :_CompliantCustomerJane
+  ; ant:hasAdherent :_PierreTheManager
+  # ; ant:hasAdherent :_Sign
+  # ; ant:hasAdherent :_Weight
+  # ; ant:hadAdherent :_CompliantCustomerJane
+  ; ant:hasVersion 1
   .
 
 :_Savagery
@@ -83,20 +94,76 @@
   ; gist:name "Pierre Cadieux"^^xsd:string
   ; ant:inherentDisposition [
     a ant:Disposition
-    ; ant:withMood ant:Savagery
+    ; ant:withMood :_Savagery
     ; ant:dispositionLevel 1
   ]
   ; ant:inherentDisposition [
     a ant:Disposition
-    ; ant:withMood ant:Carelessness
+    ; ant:withMood :_Carelessness
     ; ant:dispositionLevel -8
   ]
   ; ant:inherentDisposition [
     a ant:Disposition
-    ; ant:withMood ant:Willingness
+    ; ant:withMood :_Willingness
     ; ant:dispositionLevel 7
   ]
+  ; ant:hasLanguageFluence [
+    a ant:LanguageFluency
+    ; ant:fluencyLevel 7
+    ; schema:knowsLanguage :_FrenchLanguage
+  ]
+  ; ant:hasLanguageFluency [
+    a ant:LanguageFluency
+    ; ant:fluencyLevel 5
+    ; schema:knowsLanguage :_DutchLanguage
+  ]
+  ; ant:hasLanguageFluency [
+    a ant:LanguageFluency
+    ; ant:fluencyLevel 4
+    ; schema:knowsLanguage :_EnglishLanguage
+  ]
+  ; ant:hasLanguageFluency [
+    a ant:LanguageFluency
+    ; ant:fluencyLevel 5
+    ; schema:knowsLanguage :_GermanLanguage
+  ]
   ; ant:administratesProgram :_PierresKeys
+  .
+
+:_GabrielleVanAalsburg
+  a ant:Innovator
+  ; ant:residesIn :_Belgium
+  ; gist:name "Gabriëlle Van Aalsburg"^^xsd:string
+  ; ant:inherentDisposition [
+    a ant:Disposition
+    ; ant:withMood :_Savagery
+    ; ant:dispositionLevel 1
+  ]
+  ; ant:inherentDisposition [
+    a ant:Disposition
+    ; ant:withMood :_Carelessness
+    ; ant:dispositionLevel -8
+  ]
+  ; ant:inherentDisposition [
+    a ant:Disposition
+    ; ant:withMood :_Willingness
+    ; ant:dispositionLevel 7
+  ]
+  ; ant:hasLanguageFluence [
+    a ant:LanguageFluency
+    ; ant:fluencyLevel 7
+    ; schema:knowsLanguage :_FrenchLanguage
+  ]
+  ; ant:hasLanguageFluency [
+    a ant:LanguageFluency
+    ; ant:fluencyLevel 5
+    ; schema:knowsLanguage :_DutchLanguage
+  ]
+  ; ant:hasLanguageFluency [
+    a ant:LanguageFluency
+    ; ant:fluencyLevel 4
+    ; schema:knowsLanguage :_EnglishLanguage
+  ]
   .
 
 ####################################################################
@@ -108,17 +175,17 @@
   ; ant:residesIn :_Belgium
   ; ant:inherentDisposition [
     a ant:Disposition
-    ; ant:withMood ant:Savagery
+    ; ant:withMood :_Savagery
     ; ant:dispositionLevel 2
   ]
   ; ant:inherentDisposition [
     a ant:Disposition
-    ; ant:withMood ant:Carelessness
+    ; ant:withMood :_Carelessness
     ; ant:dispositionLevel -3
   ]
   ; ant:inherentDisposition [
     a ant:Disposition
-    ; ant:withMood ant:Willingness
+    ; ant:withMood :_Willingness
     ; ant:dispositionLevel 7
   ]
   ; ant:hasProgramDisposition :_EllaAaksterSavagenessKeys
@@ -144,20 +211,28 @@
 :_EllaAaksterSavagenessKeys
   a ant:ProgramDisposition
   ; ant:targetProgram :_PierresKeys
-  ; ant:withMood ant:Savagery
+  ; ant:withMood :_Savagery
   ; ant:dispositionLevel 3
   .
 :_EllaAaksterCarelessnessKeys
   a ant:ProgramDisposition
   ; ant:targetProgram :_PierresKeys
-  ; ant:withMood ant:Carelessness
+  ; ant:withMood :_Carelessness
   ; ant:dispositionLevel 1
   .
 :_EllaAaksterWillingnessKeys
   a ant:ProgramDisposition
   ; ant:targetProgram :_PierresKeys
-  ; ant:withMood ant:Willingness
+  ; ant:withMood :_Willingness
   ; ant:dispositionLevel 5
+  .
+
+:_Reservation_B
+  a ant:Reservation
+  ; skos:prefLabel "Ella Aakster's Reservation"@en
+  ; gist:actualStart "2020-03-23T08:20:00"^^xsd:datetime
+  ; gist:actualEnd "2020-03-25T08:20:00"^^xsd:datetime
+  ; ant:concernedAbout :_Room2
   .
 
 :_JohnSmith a ant:Cutomer
@@ -165,17 +240,17 @@
   ; ant:residesIn :_Virgina
   ; ant:inherentDisposition [
     a ant:Disposition
-    ; ant:withMood ant:Savagery
+    ; ant:withMood :_Savagery
     ; ant:dispositionLevel 5
   ]
   ; ant:inherentDisposition [
     a ant:Disposition
-    ; ant:withMood ant:Carelessness
+    ; ant:withMood :_Carelessness
     ; ant:dispositionLevel 4
   ]
   ; ant:inherentDisposition [
     a ant:Disposition
-    ; ant:withMood ant:Willingness
+    ; ant:withMood :_Willingness
     ; ant:dispositionLevel -1
   ]
   ; ant:hasProgramDisposition :_JohnSmithsAttitudeTowardsKeysSavagery
@@ -192,31 +267,30 @@
 :_JohnSmithsAttitudeTowardsKeysSavagery
   a ant:ProgramDisposition
   ; ant:targetProgram :_PierresKeys
-  ; ant:withMood ant:Savagery
+  ; ant:withMood :_Savagery
   ; ant:dispositionLevel 7
   .
 
 :_JohnSmithsAttitudeTowardsKeysCarelessness
   a ant:ProgramDisposition
   ; ant:targetProgram :_PierresKeys
-  ; ant:withMood ant:Carelessness
+  ; ant:withMood :_Carelessness
   ; ant:dispositionLevel 1
   .
 
 :_JohnSmithsAttitudeTowardsKeysWillingness
   a ant:ProgramDisposition
   ; ant:targetProgram :_PierresKeys
-  ; ant:withMood ant:Willingness
+  ; ant:withMood :_Willingness
   ; ant:dispositionLevel -7
   .
 
 :_Reservation_A
-  a :HotelReservationWithPierre
-  ; :isAssigned :_HotelKey_1
-  ; gist:duration [
-    gist:actualStart "2020-03-23T08:20:00"^^xsd:dateTime
-    ; gist:actualEnd "2020-03-25T08:20:00"^^xsd:dateTime
-  ]
+  a ant:Reservation
+  ; skos:prefLabel "John Smith's Reservation"@en
+  ; gist:actualStart "2020-03-23T08:20:00"^^xsd:datetime
+  ; gist:actualEnd "2020-03-25T08:20:00"^^xsd:datetime
+  ; ant:concernedAbout :_Room1
   .
 
 
