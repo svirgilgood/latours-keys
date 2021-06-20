@@ -14,16 +14,35 @@
 
 lks:EndStateShape {
   lks:EndStateShape a sh:NodeShape
-    ; sh:targetClass ant:State
     ; rdfs:comment 'This is more about the desired state and/or location at the conclusions of the program'@en
     ; rdfs:comment "we can't model the action, but we can model the desired outcome"@en
     ; rdfs:comment "though, maybe we should think about modeling Stored Procedures"@en
     ; rdfs:comment "should we call it desired outcome? Maybe just the path will be desried outcome"@en
     ; rdfs:comment 'use qualified value'@en
+    ; skos:editorialNote "The endstate should have both a ant:State class as well as another class distinguishing its character"@en
   ; sh:property [
-
-
+    sh:path rdf:type
+    ; sh:class ant:State
   ]
+  ; sh:property [
+    sh:path rdf:type
+    ; sh:qualifiedValueShape [
+      sh:class gist:GeoLocation
+    ]
+  ]
+  ; sh:property [
+    sh:path rdf:type
+    ; sh:qualifiedValueShape [
+      sh:class ant:Mood
+    ]
+  ]
+  ; sh:property [
+    sh:path rdf:type
+    ; sh:qualifiedValueShape [
+      sh:class ant:Position
+    ]
+  ]
+  .
 }
 
 lks:IntentionShape {
@@ -66,7 +85,8 @@ lks:IntentionShape {
     ]
     ; sh:property [
       sh:path ant:desiredEndState
-      ; sh:class ant:State
+      ; sh:node ant:EndStateShape
+      ; sh:minCount 1
     ]
     .
 }

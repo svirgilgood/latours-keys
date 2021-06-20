@@ -147,6 +147,13 @@ ant:Mood
   ; skos:prefLabel "Mood"@en
   .
 
+ant:Position
+  a owl:Class
+  ; owl:subClassOf ant:State
+  ; rdfs:comment "this is the different positions a state can be in for an object, e.g. locked or unlocked"@en
+  ; skos:prefLabel "Position"@en
+  .
+
 ################################################################
 #
 # Object Properties
