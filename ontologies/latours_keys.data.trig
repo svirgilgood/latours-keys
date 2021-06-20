@@ -1,55 +1,286 @@
-@prefix ant: <https://e2dubba.github.io/latours-keys/ontology/> .
+@prefix ant:<https://e2dubba.github.io/latours-keys/ontology/v1#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
+@prefix dbo: <https://dbpedia.org/ontology/> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 @prefix gist: <https://ontologies.semanticarts.com/gist/> .
 
 @prefix : <https://e2dubba.github.io/latours-keys/data/> .
 
 
+
+
+:_OnHotelDesk
+  a ant:State
+  ; a gist:GeoLocation # This needs to be place that is related to but not overlapping with state
+  ; skos:prefLabel "Hotel Desk"@en
+  .
+
+:_Room1
+  a ant:HotelRoom
+  ; ant:hasKey :_HotelKey_1
+  ; skos:prefLabel "Room 1"@en
+  .
+
+:_HotelKey_1
+  a ant:Key
+  ; ant:fitsRoom :_Room1
+  ; skos:prefLabel "Key 1"@en
+  .
+
+:_ReturnKeysToDesk
+  a ant:Intention
+  ; ant:fromPerspectiveOf :_Pierre
+  ; ant:concernedAbout :_HotelKey_1
+  ; ant:concernedAbout :_HotelKey_2
+  ; ant:concernedAbout :_HotelKey_3
+  ; ant:concernedAbout :_HotelKey_4
+  ; ant:concernedAbout :_HotelKey_5
+  ; ant:concernedAbout :_HotelKey_6
+  ; ant:concernedAbout :_HotelKey_7
+  ; ant:desiredEndState :_OnHotelDesk
+  .
+
 :_PierresKeys
   a ant:Program
-  ; 
+  ; ant:hasIntention :_ReturnKeysToDesk
+  ; ant:hasAdherent :_Pierre
+  ; ant:hasAdherent :_Sign
+  ; ant:hasAdherent :_Weight
+  ; ant:hadAdherent :_CompliantCustomerJane
+  .
+
+:_Savagery
+  a ant:Mood
+  ; rdfs:comment "An actors predisposition to the savagery, especially as it relates to a given program"@en
+  ; skos:prefLabel "Savagery"@en
+  .
+
+:_Carelessness
+  a ant:Mood
+  ; rdfs:comment "An actors predisposition to carelessness, especially as it relates to a given program"@en
+  ; skos:prefLabel "Carelessness"@en
+  .
+
+:_Willingness
+  a ant:Mood
+  ; rdfs:comment "An actors willingness to go with another actors program"@en
+  ; skos:prefLabel "Willingness"@e
+  ; skos:editorialNote "Perhaps there should be a inverse relationship to resistence, but I think marking willingness is helpful enough"@en
+  .
+
+####################################################################
+# Hotel Manager
+####################################################################
+
+:_PierreTheManager
+  a ant:HotelManager
+  ; ant:residesIn :_Belgium
+  ; gist:name "Pierre Cadieux"^^xsd:string
+  ; ant:inherentDisposition [
+    a ant:Disposition
+    ; ant:withMood ant:Savagery
+    ; ant:dispositionLevel 1
+  ]
+  ; ant:inherentDisposition [
+    a ant:Disposition
+    ; ant:withMood ant:Carelessness
+    ; ant:dispositionLevel -8
+  ]
+  ; ant:inherentDisposition [
+    a ant:Disposition
+    ; ant:withMood ant:Willingness
+    ; ant:dispositionLevel 7
+  ]
+  ; ant:administratesProgram :_PierresKeys
+  .
+
+####################################################################
+# Customer Instances
+####################################################################
+
+:_EllaAakster a ant:Customer
+  ; gist:name "Ella Aakster"^^xsd:string
+  ; ant:residesIn :_Belgium
+  ; ant:inherentDisposition [
+    a ant:Disposition
+    ; ant:withMood ant:Savagery
+    ; ant:dispositionLevel 2
+  ]
+  ; ant:inherentDisposition [
+    a ant:Disposition
+    ; ant:withMood ant:Carelessness
+    ; ant:dispositionLevel -3
+  ]
+  ; ant:inherentDisposition [
+    a ant:Disposition
+    ; ant:withMood ant:Willingness
+    ; ant:dispositionLevel 7
+  ]
+  ; ant:hasProgramDisposition :_EllaAaksterSavagenessKeys
+  ; ant:hasProgramDisposition :_EllaAaksterCarelessnessKeys
+  ; ant:hasProgramDisposition :_EllaAaksterWillingnessKeys
+  ; ant:hasLanguageFluence [
+    a ant:LanguageFluency
+    ; ant:fluencyLevel 7
+    ; schema:knowsLanguage :_FrenchLanguage
+  ]
+  ; ant:hasLanguageFluency [
+    a ant:LanguageFluency
+    ; ant:fluencyLevel 5
+    ; schema:knowsLanguage :_DutchLanguage
+  ]
+  ; ant:hasLanguageFluency [
+    a ant:LanguageFluency
+    ; ant:fluencyLevel 4
+    ; schema:knowsLanguage :_EnglishLanguage
+  ]
+  ; ant:hasReservation :_Reservation_B
+  .
+:_EllaAaksterSavagenessKeys
+  a ant:ProgramDisposition
+  ; ant:targetProgram :_PierresKeys
+  ; ant:withMood ant:Savagery
+  ; ant:dispositionLevel 3
+  .
+:_EllaAaksterCarelessnessKeys
+  a ant:ProgramDisposition
+  ; ant:targetProgram :_PierresKeys
+  ; ant:withMood ant:Carelessness
+  ; ant:dispositionLevel 1
+  .
+:_EllaAaksterWillingnessKeys
+  a ant:ProgramDisposition
+  ; ant:targetProgram :_PierresKeys
+  ; ant:withMood ant:Willingness
+  ; ant:dispositionLevel 5
+  .
+
+:_JohnSmith a ant:Cutomer
+  ; gist:name "John Smith"^^xsd:string
+  ; ant:residesIn :_Virgina
+  ; ant:inherentDisposition [
+    a ant:Disposition
+    ; ant:withMood ant:Savagery
+    ; ant:dispositionLevel 5
+  ]
+  ; ant:inherentDisposition [
+    a ant:Disposition
+    ; ant:withMood ant:Carelessness
+    ; ant:dispositionLevel 4
+  ]
+  ; ant:inherentDisposition [
+    a ant:Disposition
+    ; ant:withMood ant:Willingness
+    ; ant:dispositionLevel -1
+  ]
+  ; ant:hasProgramDisposition :_JohnSmithsAttitudeTowardsKeysSavagery
+  ; ant:hasProgramDisposition :_JohnSmithsAttitudeTowardsKeysCarelessness
+  ; ant:hasProgramDisposition :_JohnSmithsAttitudeTowardsKeysWillingness
+  ; ant:hasLanguageFluency [
+    a ant:LanguageFluency
+    ; ant:fluencyLevel 7
+    ; schema:knowsLanguage :_EnglishLanguage
+  ]
+  ; ant:hasReservation :_Reservation_A
   .
 
 :_JohnSmithsAttitudeTowardsKeysSavagery
   a ant:ProgramDisposition
   ; ant:targetProgram :_PierresKeys
   ; ant:withMood ant:Savagery
-  ; ant:disposition 7
+  ; ant:dispositionLevel 7
   .
 
 :_JohnSmithsAttitudeTowardsKeysCarelessness
   a ant:ProgramDisposition
   ; ant:targetProgram :_PierresKeys
   ; ant:withMood ant:Carelessness
-  ; ant:disposition 1
+  ; ant:dispositionLevel 1
   .
 
 :_JohnSmithsAttitudeTowardsKeysWillingness
   a ant:ProgramDisposition
   ; ant:targetProgram :_PierresKeys
   ; ant:withMood ant:Willingness
-  ; ant:disposition -7
+  ; ant:dispositionLevel -7
   .
 
-
-:_JohnSmith a ant:Cutomer
-  ; gist:name "John Smith"^^xsd:string
-  ; ant:residesIn :_Virgina
-  ; ant:hasProgramDisposition :_JohnSmithsAttitudeTowardsKeysSavagery
-  ; ant:hasProgramDisposition :_JohnSmithsAttitudeTowardsKeysCarelessness
-  ; ant:hasProgramDisposition :_JohnSmithsAttitudeTowardsKeysWillingness
-  ; ant:speaks :_Southern
-  .
-
-:_HotelManagersIntention a ant:Intention 
-  ; ant:fromPerspectiveOF :_HotelManagerPierre 
-  ; ant:primaryConcern :_AllHisHotelKeys 
-  ; ant:desiredEndState [
-    :concernedActant :_keys 
-     ; :residesAt :_FrontDesk
+:_Reservation_A
+  a :HotelReservationWithPierre
+  ; :isAssigned :_HotelKey_1
+  ; gist:duration [
+    gist:actualStart "2020-03-23T08:20:00"^^xsd:dateTime
+    ; gist:actualEnd "2020-03-25T08:20:00"^^xsd:dateTime
   ]
+  .
+
+
+#################################################################
+#
+#  Non hotel specific instances
+#
+#################################################################
+
+:_Virgina
+  a gist:GeoPoliticalRegion
+  ; skos:prefLabel "Virginia"@en
+  ; dbo:officialLanguage :_EnglishLanguage
+  .
+
+:_Belgium
+  a gist:GeoPoliticalRegion
+  ; dbo:officialLanguage :_GermanLanguage
+  ; dbo:officialLanguage :_FrenchLanguage
+  ; dbo:officialLanguage :_DutchLanguage
+  .
+
+##############################################################################
+# 10 most common languages in Europe according to a random website
+#############################################################################
+
+
+:_GermanLanguage
+  a schema:Language
+  ; skos:prefLabel "German"@en
+  .
+:_RussianLanguage
+  a schema:Language
+  ; skos:prefLabel "Russian"@en
+  .
+:_FrenchLanguage
+  a schema:Language
+  ; skos:prefLabel "French"@en
+  .
+:_TurkishLanguage
+  a schema:Language
+  ; skos:prefLabel "Turkish"@en
+  .
+:_ItalianLanguage
+  a schema:Language
+  ; skos:prefLabel "Italian"@en
+  .
+:_EnglishLanguage
+  a schema:Language
+  ; skos:prefLabel "English"@en
+  .
+:_SpanishLanguage
+  a schema:Language
+  ; skos:prefLabel "Spanish"@en
+  .
+:_PolishLanguage
+  a schema:Language
+  ; skos:prefLabel "Polish"@en
+  .
+:_UkrainianLanguage
+  a schema:Language
+  ; skos:prefLabel "Ukrainian"@en
+  .
+:_DutchLanguage
+  a schema:Language
+  ; skos:prefLabel "Dutch"@en
+  .

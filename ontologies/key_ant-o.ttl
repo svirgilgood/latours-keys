@@ -5,6 +5,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 @prefix gist: <https://ontologies.semanticarts.com/gist/> .
 
 
@@ -64,13 +65,31 @@ ant:Innovator
 
 
 ## Non-Human Actants
-ant:NonHumanActant
+
+ant:HotelRoom
   a owl:Class
-  ; rdfs:subClassOf ant:Actant
-  ; skos:definition "A Non-Human Actor in the system"@en
-  ; skos:prefLabel "Actant"@en
+  ; rdfs:subClassOf ant:NonHumanActant
+  ; skos:definition "A hotel room intended to be rented out"@en
+  ; skos:prefLabel "Hotel Room"@en
   .
 
+ant:Key
+  a owl:Class
+  ; rdfs:subClassOf ant:NonHumanActant
+  ; skos:definition "an instrument used to an unlock a door"@en
+  .
+
+ant:Sign
+  a owl:Class
+  ; rdfs:subClassOf ant:NonHumanActant
+  ; skos:definition "a display containing a message"@en
+  .
+
+ant:Weight
+  a owl:Class
+  ; rdfs:subClassOf ant:NonHumanActant
+  ; skos:definition "the weight attached to a key"@en
+  .
 
 # Origin info
 
@@ -112,29 +131,144 @@ ant:Mood
   a owl:Class
   ; owl:subClassOf ant:State
   ; rdfs:comment "The different types of dispositions that impact a way a human actor relates to a program"@en
+  ; rdfs:comment "the specific moods are actually instances and not subclasses"
   ; skos:prefLabel "Mood"@en
   .
 
-ant:Savagery
-  a owl:Class
-  ; rdfs:subClassOf ant:Mood
-  ; rdfs:comment "An actors predisposition to the savagery, especially as it relates to a given program"@en
-  ; skos:prefLabel "Savagery"@en
+
+################################################################
+#
+# Object Properties
+#
+################################################################
+
+ant:adheresTo
+  a owl:ObjectProperty
+  ; rdfs:comment "inverse of has adherents"
+  ; skos:prefLabel "adheres to"@en
   .
 
-ant:Carelessness
-  a owl:Class
-  ; rdfs:subClassOf ant:Mood
-  ; rdfs:comment "An actors predisposition to carelessness, especially as it relates to a given program"@en
-  ; skos:prefLabel "Carelessness"@en
+ant:administratesProgram
+  a owl:ObjectProperty
+  ; rdfs:comment "the one who creates and oversees the action of a program"@en
+  ; skos:prefLabel "administrates program"@en
   .
 
-ant:Willingness
-  a owl:Class
-  ; rdfs:subClassOf ant:Mood
-  ; rdfs:comment "An actors willingness to go with another actors program"@en
-  ; skos:prefLabel "Willingness"@e
-  ; skos:editorialNote "Perhaps there should be a inverse relationship to resistence, but I think marking willingness is helpful enough"@en
+ant:concernedAbout
+  a owl:ObjectProperty
+  ; rdfs:comment "reference to the class or entity that is the object of concern for the instance"@en
+  ; skos:prefLabel "concerned about"@en
+  .
+
+ant:connectedTo
+  a owl:ObjectProperty
+  ; rdfs:comment "this refers to a physical connection between two objects"@en
+  ; skos:prefLabel "connected to"@en
+  .
+
+ant:desiredEndState
+  a owl:ObjectProperty
+  ; rdfs:comment "the final state, position, or goal of an intention"@en
+  ; skos:prefLabel "desired end state"@en
+  .
+
+ant:fitsRoom
+  a owl:ObjectProperty
+  ; owl:inverseOf ant:hasKey
+  ; rdfs:comment "the room the key works with"@en
+  ; skos:prefLabel "fits room"@en
+  .
+
+ant:fromPerspectiveOf
+  a owl:ObjectProperty
+  ; rdf:range ant:Actant
+  ; rdfs:comment "the vantage point provided by a particular actant"@en
+  ; skos:prefLabel "from perspective of"@en
+  .
+
+ant:hasAdherent
+  a owl:ObjectProperty
+  ; rdfs:comment "The acatants that are part of a given program"@en
+  ; owl:inverseOf ant:adheresTo
+  ; skos:editorialNote "needs an inverse property"@en
+  ; skos:prefLabel "has adherents"@en
+  .
+
+ant:hasIntention
+  a owl:ObjectProperty
+  ; rdfs:comment "the intention of a program"@en
+  ; skos:prefLabel "has intention"@en
+  .
+
+ant:hasKey
+  a owl:ObjectProperty
+  ; owl:inverseOf ant:fitsRoom
+  ; rdfs:comment "the key that opens the door to this room"@en
+  ; skos:prefLabel "has key"@en
+  .
+
+ant:hasLanguageFluency
+  a owl:ObjectProperty
+  ; rdfs:comment "asserting that an actor has a fluency in a particular language"@en
+  ; skos:prefLabel "has language fluency"@en
+  .
+
+ant:hasProgramDisposition
+  a owl:ObjectProperty
+  ; rdfs:comment "the way an actor relates to a program"@en
+  ; skos:prefLabel "has program disposition"@en
+  .
+
+ant:hasReservation
+  a owl:ObjectProperty
+  ; rdfs:comment "a room reservation for a patron"@en
+  ; skos:prefLabel "has reservation"@en
+  .
+
+ant:hasVersion
+  a owl:ObjectProperty
+  ; rdfs:comment "linking the program to a goal or behavioral change the program architect wishes on the system"@en
+  ; skos:editorialNote "Does this need a domain? a range"@en
+  ; skos:prefLabel "has version"@en
+  .
+
+ant:inactedDisposition
+  a owl:ObjectProperty
+  ; rdfs:comment "the disposition towards a particular program or anti-program"@en
+  ; skos:prefLabel "inacted disposition"@en
+  .
+
+ant:inherentDisposition
+  a owl:ObjectProperty
+  ; rdfs:comment "the level of the mood. measured from -10 to 10"@en
+  ; rdfs:comment 'this is more like a stat level in D&D, something that sees realization only when added to a dice roll'@en
+  ; skos:prefLabel "inherent disposition"@en
+  .
+
+ant:relationToProgram
+  a owl:ObjectProperty
+  ; rdfs:comment "An actor's relationship towards a program"@en
+  ; skos:prefLabel "relation to program"@en
+  .
+
+ant:residesIn
+  a owl:ObjectProperty
+  ; rdfs:comment "which country an actor resides"@en
+  ; skos:prefLabel "resides in"@en
+  .
+
+ant:targetProgram
+  a owl:ObjectProperty
+  ; rdfs:domain ant:ProgramDisposition
+  ; rdfs:range ant:Program
+  ; rdfs:comment "the program a particular disposition is related to"@en
+  ; skos:prefLabel "target program"@en
+  .
+
+ant:withMood
+  a owl:ObjectProperty
+  ; rdfs:comment "Specifying which mood a given program disposition is referencing"@en
+  ; skos:prefLabel "with mood"@en
   .
 
 
@@ -144,73 +278,9 @@ ant:Willingness
 #
 ################################################################
 
-ant:adheresTo
+ant:dispositionLevel
   a rdf:AnnotationProperty
-  ; rdfs:comment "inverse of has adherents"
-  ; skos:prefLabel "adheres to"@en
+  ; rdfs:range xsd:integer
+  ; rdfs:comment "a measure of a moods disposition to a program, from -10 to 10"@en
+  ; skos:prefLabel "disposition"
   .
-
-ant:administratesProgram
-  a rdf:AnnotationProperty
-  ; rdfs:comment "the one who creates and oversees the action of a program"@en
-  ; skos:prefLabel "administrates program"@en
-  .
-
-ant:hasAdherents
-  a rdf:AnnotationProperty
-  ; rdfs:comment "The acatants that are part of a given program"@en
-  ; skos:editorialNote "needs an inverse property"@en
-  ; skos:prefLabel "has adherents"@en
-  .
-
-ant:hasLanguageFluency
-  a rdf:AnnotationProperty
-  ; rdfs:comment "asserting that an actor has a fluency in a particular language"@en
-  ; skos:prefLabel "has language fluency"@en
-  .
-
-ant:hasProgramDisposition
-  a rdf:AnnotationProperty
-  ; rdfs:comment "the way an actor relates to a program"@en
-  ; skos:prefLabel "has program disposition"@en
-  .
-
-ant:hasVersion
-  a rdf:AnnotationProperty
-  ; rdfs:comment "linking the program to a goal or behavioral change the program architect wishes on the system"@en
-  ; skos:editorialNote "Does this need a domain? a range"@en
-  ; skos:prefLabel "has version"@en
-  .
-
-ant:inactedDisposition
-  a rdf:AnnotationProperty
-  ; rdfs:comment "the disposition towards a particular program or anti-program"@en
-  ; skos:prefLabel "inacted disposition"@en
-  .
-
-ant:inherentDisposition
-  a rdf:AnnotationProperty
-  ; rdfs:comment "the level of the mood. measured from -10 to 10"@en
-  ; rdfs:comment 'this is more like a stat level in D&D, something that sees realization only when added to a dice roll'@en
-  ; skos:prefLabel "inherent disposition"@en
-  .
-
-ant:relationToProgram
-  a rdf:AnnotationProperty
-  ; rdfs:comment "An actor's relationship towards a program"@en
-  ; skos:prefLabel "relation to program"@en
-  .
-
-ant:residesIn
-  a rdf:AnnotationProperty
-  ; rdfs:comment "which country an actor resides"@en
-  ; skos:prefLabel "resides in"@en
-  .
-
-ant:withMood
-  a rdf:AnnotationProperty
-  ; rdfs:comment "Specifying which mood a given program disposition is referencing"@en
-  ; skos:prefLabel "with mood"@en
-  .
-
-

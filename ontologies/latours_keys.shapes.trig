@@ -5,6 +5,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 @prefix gist: <https://ontologies.semanticarts.com/gist/> .
 
 @prefix lks: <https://e2dubba.github.io/latours-keys/shapes/> .
@@ -24,6 +25,9 @@ lks:EndStateShape {
 
   ]
 }
+
+
+
 
 lks:IntentionShape {
   lks:IntentionShape a sh:NodeShape
@@ -51,7 +55,7 @@ lks:IntentionShape {
     ## Anything that could be set up as a relationship
     '''
     ; sh:property [
-      sh:path ant:fromPerspectiveOF
+      sh:path ant:fromPerspectiveOf
       ; sh:class ant:Actant
       ; sh:name "From Perspective Of"@en
       ; sh:description "The author of the program "@en
@@ -69,7 +73,6 @@ lks:IntentionShape {
 
     ]
     .
-
 }
 
 lks:ProgramShape {
@@ -84,7 +87,7 @@ lks:ProgramShape {
         ; rdfs:comment "The intention is the goal or behaviorial change, the program architect of the program wishes on the system"@en
     ]
     ; sh:property [
-      sh:path ant:hasAdherents
+      sh:path ant:hasAdherent
         ; sh:class ant:Actant
         ; rdfs:comment "This includes both human and non-human actors, as well as the program architect"@en
     ]
@@ -110,7 +113,7 @@ lks:DispositionShape {
     ; sh:order 2
   ]
   ; sh:property [
-    sh:path ant:disposition
+    sh:path ant:dispositionLevel
     ; sh:datatype xsd:integer
     ; sh:minValue -10
     ; sh:maxValue 10
@@ -202,6 +205,11 @@ lks:CustomerShape {
     ; sh:node lks:LanguageFluencyShape
     ; sh:order 4
   ]
+  ; sh:property [
+    sh:path ant:hasReservation
+    ; sh:node lks:ReservationShape
+    ; sh:order 5
+  ]
   .
 }
 
@@ -214,3 +222,52 @@ lks:HotelManagerShape {
   ]
 }
 
+lks:ReservationShape {
+  lks:ReservationShape a sh:NodeShape
+  ; sh:targetClass ant:Reservation
+  ; sh:property [
+    sh:path gist:actualStart
+    ; sh:datatype xsd:datetime
+    ; sh:order 1
+  ]
+  ; sh:property [
+    sh:path gist:acutalEnd
+    ; sh:datatype xsd:datatime
+    ; sh:order 2
+  ]
+  ; sh:property [
+    sh:path ant:concernedAbout
+    ; sh:class ant:HotelRoom
+    ; sh:order 3
+  ]
+  .
+}
+
+
+lks:HotelRoomShape {
+  lks:HotelRoomShape a sh:NodeShape
+  ; sh:targetClass ant:HotelRoom
+  ; sh:property [
+    sh:path skos:prefLabel
+    ; sh:datatype rdfs:langString
+    ; sh:order 1
+  ]
+  ; sh:property [
+    sh:path ant:hasKey
+    ; sh:node ant:KeyShape
+  ]
+  ; sh:property [
+    sh:path [ sh:inversePath ant:fitsRoom ]
+    ; sh:minCount 1
+    ; sh:maxCount 1
+    ; rdfs:comment "The inverse path assures us that only one room fits one key"@en
+  ]
+}
+
+lks:KeyShape {
+  lks:KeyShape a sh:NodeShape
+  ; sh:targetClass ant:Key
+  ; sh:property [
+    sh:path ant:
+  ]
+}
