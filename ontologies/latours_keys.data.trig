@@ -49,6 +49,16 @@
   ]
   .
 
+:_HotelKey_3
+  a ant:Key
+  ; ant:fitsRoom :_Room3
+  ; skos:prefLabel "Key 3"@en
+  ; ant:connectedTo [
+    a ant:Weight
+    ; ant:hasMassinKg 0.1
+  ]
+  .
+
 :_ReturnKeyMessage
   a ant:Message
   ; skos:prefLabel "Please Return Message"@en
