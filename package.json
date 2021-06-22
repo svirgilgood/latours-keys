@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/e2dubba/latours-keys#readme",
   "dependencies": {
-    "n3": "^1.10.0"
+    "n3": "^1.10.0",
+    "prettier": "^2.3.1"
   }
 }
