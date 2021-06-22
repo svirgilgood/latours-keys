@@ -96,7 +96,7 @@ const store = createStore(fs.readFileSync(cliArgs[2], "utf8"));
 const shortLong = createNameSpaceKeys();
 const htmlData = buildHtml(store, shortLong);
 
-fs.writeFile("../site/ontology/v1", htmlData, function (err) {
+fs.writeFile("../docs/ontology/v1", htmlData, function (err) {
   if (err) return console.log(err);
   console.log("Written to File");
 });
