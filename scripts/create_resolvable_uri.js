@@ -4,7 +4,7 @@ const N3 = require("n3");
 const parser = new N3.Parser({ format: "application/trig" });
 
 const PREFIXES = {
-  ant: "https://e2dubba.github.io/latours-keys/ontology#",
+  ant: "https://e2dubba.github.io/latours-keys/ontology/v1#",
   owl: "http://www.w3.org/2002/07/owl#",
   rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
   xml: "http://www.w3.org/XML/1998/namespace",
@@ -96,4 +96,7 @@ const store = createStore(fs.readFileSync(cliArgs[2], "utf8"));
 const shortLong = createNameSpaceKeys();
 const htmlData = buildHtml(store, shortLong);
 
-console.log(htmlData);
+fs.writeFile("../site/ontology/v1", htmlData, function (err) {
+  if (err) return console.log(err);
+  console.log("Written to File");
+});

@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Actor Network Ontology</title>
+  </head>
+  <body>
+      
+<table>
+  <tr>
+    <th colspan="2" id=ontology>undefined:ontology</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2002/07/owl#versionIRI">owl:versionIRI</a> </td>
+    <td> <a href="https://e2dubba.github.io/latours-keys/ontology/1.0.0">undefined:1.0.0</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2002/07/owl#imports">owl:imports</a> </td>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">rdf:</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2002/07/owl#imports">owl:imports</a> </td>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#">rdfs:</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2002/07/owl#imports">owl:imports</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl">undefined:owl</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2002/07/owl#imports">owl:imports</a> </td>
+    <td> <a href="https://ontologies.semanticarts.com/gist/">gist:</a> </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=Actant>undefined:Actant</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#NamedIndividual">owl:NamedIndividual</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a> </td>
+    <td>Both Human and and Non-Human individuals that interact in the system</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>Actor/Actant</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=HumanActor>undefined:HumanActor</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a> </td>
+    <td>A Human Actor in the system</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>Human Actor</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a> </td>
+    <td> <a href="https://e2dubba.github.io/latours-keys/ontology#Actant">undefined:Actant</a> </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=HotelManager>undefined:HotelManager</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a> </td>
+    <td>A person who has a program, and wants to inact it</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>Hotel Manager</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a> </td>
+    <td> <a href="https://e2dubba.github.io/latours-keys/ontology#Actant">undefined:Actant</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a> </td>
+    <td> <a href="https://ontologies.semanticarts.com/gist/Person">gist:Person</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#editorialNote">skos:editorialNote</a> </td>
+    <td>I think this might should be more general. For all those who want to enact a program?</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=Customer>undefined:Customer</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a> </td>
+    <td>A person who is renting a room in the hotel</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a> </td>
+    <td> <a href="https://e2dubba.github.io/latours-keys/ontology#HumanActor">undefined:HumanActor</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a> </td>
+    <td> <a href="https://ontologies.semanticarts.com/gist/Person">gist:Person</a> </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=Innovator>undefined:Innovator</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a> </td>
+    <td>Some one who creates, fabricates, or adapts materials</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a> </td>
+    <td> <a href="https://e2dubba.github.io/latours-keys/ontology#HumanActor">undefined:HumanActor</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a> </td>
+    <td> <a href="https://ontologies.semanticarts.com/gist/Person">gist:Person</a> </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=NonHumanActant>undefined:NonHumanActant</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a> </td>
+    <td>Non-Human Actant</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>Non Human Actant</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a> </td>
+    <td> <a href="https://e2dubba.github.io/latours-keys/ontology#Actant">undefined:Actant</a> </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=HotelRoom>undefined:HotelRoom</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a> </td>
+    <td>A hotel room intended to be rented out</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>Hotel Room</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a> </td>
+    <td> <a href="https://e2dubba.github.io/latours-keys/ontology#NonHumanActant">undefined:NonHumanActant</a> </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=Key>undefined:Key</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a> </td>
+    <td>an instrument used to an unlock a door</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a> </td>
+    <td> <a href="https://e2dubba.github.io/latours-keys/ontology#NonHumanActant">undefined:NonHumanActant</a> </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=Message>undefined:Message</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>Message</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a> </td>
+    <td> <a href="https://e2dubba.github.io/latours-keys/ontology#NonHumanActant">undefined:NonHumanActant</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>A linguistic communictation of the program</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=Sign>undefined:Sign</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a> </td>
+    <td>a display containing a message</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a> </td>
+    <td> <a href="https://e2dubba.github.io/latours-keys/ontology#NonHumanActant">undefined:NonHumanActant</a> </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=Weight>undefined:Weight</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a> </td>
+    <td>the weight attached to a key</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a> </td>
+    <td> <a href="https://e2dubba.github.io/latours-keys/ontology#NonHumanActant">undefined:NonHumanActant</a> </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=LanguageFluency>undefined:LanguageFluency</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a> </td>
+    <td>Defines the level of knowlege an actor has about a specified language</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>Language Fluency</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=Program>undefined:Program</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>How would Latour define Program? The course of action an actor places on other actors in the system?</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=ProgramDisposition>undefined:ProgramDisposition</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a> </td>
+    <td>The way an actor relates to a program</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>Program Disposition</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=Intention>undefined:Intention</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a> </td>
+    <td>The goal is the ideal state of the program, which actors and which actants, current behavior, and target behavior, locations</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>Intention</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=State>undefined:State</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a> </td>
+    <td>The final state, position, location or mood the program is hoping to achieve</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>State</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=Mood>undefined:Mood</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>Mood</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>The different types of dispositions that impact a way a human actor relates to a program</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>the specific moods are actually instances and not subclasses</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2002/07/owl#subClassOf">owl:subClassOf</a> </td>
+    <td> <a href="https://e2dubba.github.io/latours-keys/ontology#State">undefined:State</a> </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=Position>undefined:Position</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>Position</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>this is the different positions a state can be in for an object, e.g. locked or unlocked</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2002/07/owl#subClassOf">owl:subClassOf</a> </td>
+    <td> <a href="https://e2dubba.github.io/latours-keys/ontology#State">undefined:State</a> </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=adheresTo>undefined:adheresTo</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>adheres to</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>inverse of has adherents</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=administratesProgram>undefined:administratesProgram</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>administrates program</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>the one who creates and oversees the action of a program</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=concernedAbout>undefined:concernedAbout</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>concerned about</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>reference to the class or entity that is the object of concern for the instance</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=connectedTo>undefined:connectedTo</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>connected to</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#editorialNote">skos:editorialNote</a> </td>
+    <td>this should probably be a transitive property</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>this refers to a physical connection between two objects</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=desiredEndState>undefined:desiredEndState</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>desired end state</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>the final state, position, or goal of an intention</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=fitsRoom>undefined:fitsRoom</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>fits room</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>the room the key works with</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2002/07/owl#inverseOf">owl:inverseOf</a> </td>
+    <td> <a href="https://e2dubba.github.io/latours-keys/ontology#hasKey">undefined:hasKey</a> </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=hasKey>undefined:hasKey</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>has key</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>the key that opens the door to this room</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2002/07/owl#inverseOf">owl:inverseOf</a> </td>
+    <td> <a href="https://e2dubba.github.io/latours-keys/ontology#fitsRoom">undefined:fitsRoom</a> </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=fromPerspectiveOf>undefined:fromPerspectiveOf</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>from perspective of</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>the vantage point provided by a particular actant</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#range">rdf:range</a> </td>
+    <td> <a href="https://e2dubba.github.io/latours-keys/ontology#Actant">undefined:Actant</a> </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=hasAdherent>undefined:hasAdherent</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>has adherents</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#editorialNote">skos:editorialNote</a> </td>
+    <td>needs an inverse property</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>The acatants that are part of a given program</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2002/07/owl#inverseOf">owl:inverseOf</a> </td>
+    <td> <a href="https://e2dubba.github.io/latours-keys/ontology#adheresTo">undefined:adheresTo</a> </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=hasIntention>undefined:hasIntention</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>has intention</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>the intention of a program</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=hasLanguageFluency>undefined:hasLanguageFluency</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>has language fluency</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>asserting that an actor has a fluency in a particular language</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=hasMessage>undefined:hasMessage</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>has message</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>the message intended to communicate something</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2002/07/owl#range">owl:range</a> </td>
+    <td> <a href="https://e2dubba.github.io/latours-keys/ontology#Message">undefined:Message</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a> </td>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a> </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=hasProgramDisposition>undefined:hasProgramDisposition</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>has program disposition</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>the way an actor relates to a program</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=hasReservation>undefined:hasReservation</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>has reservation</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>a room reservation for a patron</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=hasVersion>undefined:hasVersion</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>has version</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#editorialNote">skos:editorialNote</a> </td>
+    <td>Does this need a domain? a range</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>linking the program to a goal or behavioral change the program architect wishes on the system</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=inactedDisposition>undefined:inactedDisposition</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>inacted disposition</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>the disposition towards a particular program or anti-program</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=inherentDisposition>undefined:inherentDisposition</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>inherent disposition</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>the level of the mood. measured from -10 to 10</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>this is more like a stat level in D&D, something that sees realization only when added to a dice roll</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=relationToProgram>undefined:relationToProgram</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>relation to program</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>An actor's relationship towards a program</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=residesIn>undefined:residesIn</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>resides in</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>which country an actor resides</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=targetProgram>undefined:targetProgram</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>target program</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>the program a particular disposition is related to</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a> </td>
+    <td> <a href="https://e2dubba.github.io/latours-keys/ontology#Program">undefined:Program</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a> </td>
+    <td> <a href="https://e2dubba.github.io/latours-keys/ontology#ProgramDisposition">undefined:ProgramDisposition</a> </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=withMood>undefined:withMood</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>with mood</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>Specifying which mood a given program disposition is referencing</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=dispositionLevel>undefined:dispositionLevel</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>disposition</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>a measure of a moods disposition to a program, from -10 to 10</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a> </td>
+    <td> <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a> </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2" id=hasMassInKg>undefined:hasMassInKg</th>
+  <tr>
+    <tr>
+    <td> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> </td>
+    <td> <a href="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> </td>
+    <td>has mass in kilograms</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> </td>
+    <td>the mass of an item in killograms</td>
+  </tr>
+  <tr>
+    <td> <a href="http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a> </td>
+    <td> <a href="http://www.w3.org/2001/XMLSchema#decimal">xsd:decimal</a> </td>
+  </tr>
+</table>
+  </body>
+  </html>
+  
