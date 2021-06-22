@@ -1,0 +1,23 @@
+{
+  "name": "Latour's Keys",
+  "version": "1.0.0",
+  "description": "an ontology for Latours Hotel Key Example ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/e2dubba/latours-keys.git"
+  },
+  "author": "efkuehn, e2dubba",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/e2dubba/latours-keys/issues"
+  },
+  "homepage": "https://github.com/e2dubba/latours-keys#readme",
+  "dependencies": {
+    "n3": "^1.10.0",
+    "prettier": "^2.3.1"
+  }
+}

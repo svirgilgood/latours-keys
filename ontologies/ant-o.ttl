@@ -1,5 +1,5 @@
-@prefix : <https://e2dubba.github.io/latours-keys/ontology#> .
-@prefix ant: <https://e2dubba.github.io/latours-keys/ontology/> .
+@prefix : <https://e2dubba.github.io/latours-keys/ontology/v1#> .
+@prefix ant: <https://e2dubba.github.io/latours-keys/ontology/v1#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -4568,7 +4568,7 @@ it may also sometimes prove useful to describe a longer-term series as an Event.
                                    rdfs:comment """A FundingAgency is an organization that implements one or more [[FundingScheme]]s and manages
     the granting process (via [[Grant]]s, typically [[MonetaryGrant]]s).
     A funding agency is not always required for grant funding, e.g. philanthropic giving, corporate sponsorship etc.
-    
+
 Examples of funding agencies include ERC, REA, NIH, Bill and Melinda Gates Foundation...
     """ ;
                                    rdfs:label "FundingAgency" ;
@@ -7213,7 +7213,7 @@ While a ProductGroup itself is not directly offered for sale, the various varyin
 <https://schema.org/Project> rdf:type owl:Class ;
                              rdfs:subClassOf <https://schema.org/Organization> ;
                              rdfs:comment """An enterprise (potentially individual but typically collaborative), planned to achieve a particular aim.
-Use properties from [[Organization]], [[subOrganization]]/[[parentOrganization]] to indicate project sub-structures. 
+Use properties from [[Organization]], [[subOrganization]]/[[parentOrganization]] to indicate project sub-structures.
    """ ;
                              rdfs:label "Project" ;
                              <https://schema.org/isPartOf> <https://pending.schema.org> ;
