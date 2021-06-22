@@ -29,6 +29,12 @@
   ; skos:prefLabel "Room 2"@en
   .
 
+:_Room3
+  a ant:HotelRoom
+  ; ant:hasKey :_HotelKey_3
+  ; skos:prefLavel "Room 3"@en
+  .
+
 :_HotelKey_1
   a ant:Key
   ; ant:fitsRoom :_Room1
@@ -82,7 +88,7 @@
   ; ant:fromPerspectiveOf :_PierreTheManager
   ; ant:concernedAbout :_HotelKey_1
   ; ant:concernedAbout :_HotelKey_2
-  # ; ant:concernedAbout :_HotelKey_3
+  ; ant:concernedAbout :_HotelKey_3
   # ; ant:concernedAbout :_HotelKey_4
   # ; ant:concernedAbout :_HotelKey_5
   # ; ant:concernedAbout :_HotelKey_6
@@ -335,30 +341,29 @@
   ; ant:residesIn :_Germany
   ; ant:inherentDisposition [
     a ant:Disposition
-    ant:withMood :_Willingness
-    ant:dispositionLevel 3
+    ; ant:withMood :_Willingness
+    ; ant:dispositionLevel 3
     ]
-  
   ; ant:inherentDisposition [
     a ant:Disposition
-    ant:withMood :_Carelessness
-    ant:dispositionLevel -4
+    ; ant:withMood :_Carelessness
+    ; ant:dispositionLevel -4
   ]
-
   ; ant:inherentDisposition [
     a ant:Disposition
-    ant:withMood :_Savagery
-    ant:dispositionLevel 2
+    ; ant:withMood :_Savagery
+    ; ant:dispositionLevel 2
   ]
   ; ant:hasProgramDisposition :_ErnstTroeltschAttitudeTowardsKeysWillingness
   ; ant:hasProgramDisposition :_ErnstTroeltschAttitudeTowardsKeysCarelessness
   ; ant:hasProgramDisposition :_ErnstTroeltschAttitudeTowardsKeySavagery
   ; ant:hasLanguageFluency [
     a ant:LanguageFluency
-    ant:fluencyLevel 7
-    schema:knowsLanguage :_GermanLanguage
+    ; ant:fluencyLevel 7
+    ; schema:knowsLanguage :_GermanLanguage
   ]
-  ant:hasReservation :_Reservation_C
+  ; ant:hasReservation :_Reservation_C
+  .
 
 :_Reservation_C
     a ant:Reservation
@@ -366,24 +371,28 @@
     ; gist:actualStart "2020-03-20T08:00:00"^^xsd:datetime
     ; gist:actualEnd "2020-03-25T08:20:00"^^xsd:datetime
     ; ant:concernedAbout :_Room3
+    .
 
 :_ErnstTroeltschAttitudeTowardsKeysWillingness
     a ant:ProgramDisposition
     ; ant:targetProgram :_PierresKeys
     ; ant:withMood :_Willingness
     ; ant:dispositionLevel 3
+    .
 
 :_ErnstTroeltschAttitudeTowardsKeysCarelessness
     a ant:ProgramDisposition
     ; ant:targetProgram :_PierresKeys
     ; ant:withMood :_Carelessness
     ; ant:dispositionLevel -4
+    .
 
 :_ErnstTroeltschAttitudeTowardsKeySavagery
     a ant:ProgramDisposition
     ; ant:targetProgram :_PierresKeys
     ; ant:withMood :_Savagery
     ; ant:dispositionLevel 2
+    .
 
 #################################################################
 #
