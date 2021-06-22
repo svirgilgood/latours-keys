@@ -74,13 +74,14 @@ lks:IntentionShape {
       sh:path ant:fromPerspectiveOf
       ; sh:class ant:Actant
       ; sh:name "From Perspective Of"@en
-      ; sh:description "The author of the program "@en
+      ; sh:description "The architect(s) of the program "@en
       ; sh:minCount 1
       ; skos:editorialNote "Maybe this should be about a particular target class, and it can have multiple actants as the perspective"@en
     ]
     ; sh:property [
       sh:path ant:concernedAbout
       ; sh:class ant:Actant
+      ; sh:description "An actant that the program intends to exist in a particular end state"
       ; sh:minCount 1
     ]
     ; sh:property [
@@ -100,19 +101,19 @@ lks:ProgramShape {
     ; sh:property [
       sh:path ant:hasIntention
         ; sh:class ant:Intention
-        ; rdfs:comment "The intention is the goal or behaviorial change, the program architect of the program wishes on the system"@en
+        ; rdfs:comment "The intention is the goal or behaviorial change the program architect of the program wishes on the system"@en
     ]
     ; sh:property [
       sh:path ant:hasAdherent
         ; sh:class ant:Actant
-        ; rdfs:comment "This includes both human and non-human actors, as well as the program architect"@en
+        ; rdfs:comment "Adherents include both human and non-human actors, as well as the program architect"@en
     ]
     ; sh:property [
       sh:path ant:hasVersion
         ; sh:datatype xsd:integer
         ; sh:minCount 1
         ; sh:maxCount 1
-        ; rdfs:comment "The number of iterations a program goes through and the changes it makes"@en
+        ; rdfs:comment "The number of iterations a program goes through and the changes these iterations make"@en
     ]
 }
 
