@@ -49,6 +49,16 @@
   ]
   .
 
+:_HotelKey_3
+  a ant:Key
+  ; ant:fitsRoom :_Room3
+  ; skos:prefLabel "Key 3"@en
+  ; ant:connectedTo [
+    a ant:Weight
+    ; ant:hasMassinKg 0.1
+  ]
+  .
+
 :_ReturnKeyMessage
   a ant:Message
   ; skos:prefLabel "Please Return Message"@en
@@ -133,7 +143,7 @@
     ; ant:withMood :_Willingness
     ; ant:dispositionLevel 7
   ]
-  ; ant:hasLanguageFluence [
+  ; ant:hasLanguageFluency [
     a ant:LanguageFluency
     ; ant:fluencyLevel 7
     ; schema:knowsLanguage :_FrenchLanguage
@@ -176,7 +186,7 @@
     ; ant:withMood :_Willingness
     ; ant:dispositionLevel 7
   ]
-  ; ant:hasLanguageFluence [
+  ; ant:hasLanguageFluency [
     a ant:LanguageFluency
     ; ant:fluencyLevel 7
     ; schema:knowsLanguage :_FrenchLanguage
@@ -218,7 +228,7 @@
   ; ant:hasProgramDisposition :_EllaAaksterSavagenessKeys
   ; ant:hasProgramDisposition :_EllaAaksterCarelessnessKeys
   ; ant:hasProgramDisposition :_EllaAaksterWillingnessKeys
-  ; ant:hasLanguageFluence [
+  ; ant:hasLanguageFluency [
     a ant:LanguageFluency
     ; ant:fluencyLevel 7
     ; schema:knowsLanguage :_FrenchLanguage
@@ -320,6 +330,60 @@
   ; ant:concernedAbout :_Room1
   .
 
+:_ErnstTroeltsch a ant:Customer
+  ; gist:name "Ernst Troeltsch"^^xsd:string
+  ; ant:residesIn :_Germany
+  ; ant:inherentDisposition [
+    a ant:Disposition
+    ant:withMood :_Willingness
+    ant:dispositionLevel 3
+    ]
+  
+  ; ant:inherentDisposition [
+    a ant:Disposition
+    ant:withMood :_Carelessness
+    ant:dispositionLevel -4
+  ]
+
+  ; ant:inherentDisposition [
+    a ant:Disposition
+    ant:withMood :_Savagery
+    ant:dispositionLevel 2
+  ]
+  ; ant:hasProgramDisposition :_ErnstTroeltschAttitudeTowardsKeysWillingness
+  ; ant:hasProgramDisposition :_ErnstTroeltschAttitudeTowardsKeysCarelessness
+  ; ant:hasProgramDisposition :_ErnstTroeltschAttitudeTowardsKeySavagery
+  ; ant:hasLanguageFluency [
+    a ant:LanguageFluency
+    ant:fluencyLevel 7
+    schema:knowsLanguage :_GermanLanguage
+  ]
+  ant:hasReservation :_Reservation_C
+
+:_Reservation_C
+    a ant:Reservation
+    ; skos:prefLabel "Ernst Troeltsch's Reservation"@en
+    ; gist:actualStart "2020-03-20T08:00:00"^^xsd:datetime
+    ; gist:actualEnd "2020-03-25T08:20:00"^^xsd:datetime
+    ; ant:concernedAbout :_Room3
+
+:_ErnstTroeltschAttitudeTowardsKeysWillingness
+    a ant:ProgramDisposition
+    ; ant:targetProgram :_PierresKeys
+    ; ant:withMood :_Willingness
+    ; ant:dispositionLevel 3
+
+:_ErnstTroeltschAttitudeTowardsKeysCarelessness
+    a ant:ProgramDisposition
+    ; ant:targetProgram :_PierresKeys
+    ; ant:withMood :_Carelessness
+    ; ant:dispositionLevel -4
+
+:_ErnstTroeltschAttitudeTowardsKeySavagery
+    a ant:ProgramDisposition
+    ; ant:targetProgram :_PierresKeys
+    ; ant:withMood :_Savagery
+    ; ant:dispositionLevel 2
 
 #################################################################
 #
@@ -339,6 +403,12 @@
   ; dbo:officialLanguage :_GermanLanguage
   ; dbo:officialLanguage :_FrenchLanguage
   ; dbo:officialLanguage :_DutchLanguage
+  .
+
+:_Germany
+  a gist:GeoPoliticalRegion
+  ; skos:prefLabel "Germany"@en
+  ; dbo:officialLanguage :_GermanLanguage
   .
 
 ##############################################################################
