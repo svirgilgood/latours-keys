@@ -278,7 +278,7 @@
   ; ant:concernedAbout :_Room2
   .
 
-:_JohnSmith a ant:Cutomer
+:_JohnSmith a ant:Customer
   ; gist:name "John Smith"^^xsd:string
   ; ant:residesIn :_Virgina
   ; ant:inherentDisposition [
