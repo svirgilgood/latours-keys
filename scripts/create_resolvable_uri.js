@@ -50,7 +50,10 @@ function createTableElement(store, subject, shortLong) {
         continue;
       }
       const { namespace, localname } = splitNamespaceLocal(term);
-      const prefix = shortLong.namespace[namespace];
+      let prefix = shortLong.namespace[namespace];
+      if (!prefix) {
+        prefix = `&lt;${term.value}&gt;`;
+      }
       const href =
         prefix === "ant" ? `href="#${localname}"` : `href="${term.value}"`;
       rowElements.push(`  <td> <a ${href}>${prefix}:${localname}</a> </td>`);
@@ -59,11 +62,14 @@ function createTableElement(store, subject, shortLong) {
   });
 
   const { namespace, localname } = splitNamespaceLocal(subject);
-  const prefix = shortLong.namespace[namespace];
+  let prefix = shortLong.namespace[namespace];
+  if (!prefix) {
+    prefix = `&lt;${subject.value}&gt;`;
+  }
   return `
 <table>
   <tr>
-    <th colspan="2" id=${localname}>${prefix}:${localname}</th>
+    <th colspan="2" align="left" id=${localname}><a href="#${localname}">${prefix}:${localname}</a></th>
   <tr>
     ${rowElements.join("\n  ")}
 </table>`;
@@ -96,7 +102,7 @@ const store = createStore(fs.readFileSync(cliArgs[2], "utf8"));
 const shortLong = createNameSpaceKeys();
 const htmlData = buildHtml(store, shortLong);
 
-fs.writeFile("../docs/ontology/v1", htmlData, function (err) {
+fs.writeFile("../docs/ontology/v1.html", htmlData, function (err) {
   if (err) return console.log(err);
   console.log("Written to File");
 });
