@@ -240,6 +240,12 @@ ant:hasMessage
   ; skos:prefLabel "has message"@en
   .
 
+ant:hasPreviousImplementation
+  a owl:ObjectProperty
+  ; rdfs:comment "A link to the previous program implementation"@en
+  ; skos:prefLabel "has previous implementation"@en
+  .
+
 ant:hasProgramDisposition
   a owl:ObjectProperty
   ; rdfs:comment "the way an actor relates to a program"@en

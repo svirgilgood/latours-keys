@@ -115,6 +115,11 @@ lks:ProgramShape {
         ; sh:maxCount 1
         ; rdfs:comment "The number of iterations a program goes through and the changes these iterations make"@en
     ]
+    ;sh: property [
+      sh:path ant:hasPreviousImplementation
+        ; sh:node lks:ProgramShape
+        ; rdfs:comment "a link to the previous version of the program. Each iteration of the program has its own shape, a new implementation is an entirely new program"@en
+    ]
 }
 
 lks:DispositionShape {
