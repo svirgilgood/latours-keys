@@ -1,6 +1,8 @@
 const fs = require("fs");
 const N3 = require("n3");
 
+const { namedNode } = N3.DataFactory;
+
 const parser = new N3.Parser({ format: "application/trig" });
 
 const PREFIXES = {
@@ -23,6 +25,8 @@ const createNameSpaceKeys = () => {
   return { namespace: FIND_PREFIX, prefix: PREFIXES };
 };
 
+const skosEdNoteNode = namedNode(`${PREFIXES.skos}editorialNote`);
+
 function splitNamespaceLocal(node) {
   const uri = node.value;
   const split =
@@ -43,6 +47,9 @@ function createStore(fileData) {
 function createTableElement(store, subject, shortLong) {
   const rowElements = [];
   store.getQuads(subject).forEach((quad) => {
+    if (quad.predicate.equals(skosEdNoteNode)) {
+      return;
+    }
     rowElements.push("<tr>");
     for (let term of [quad.predicate, quad.object]) {
       if (!(term.termType === "NamedNode")) {
