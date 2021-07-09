@@ -49,27 +49,8 @@ lks:IntentionShape {
   lks:IntentionShape a sh:NodeShape
     ; sh:targetClass ant:Intention
     ; rdfs:comment "the intention or goal of the program"@en
-    ; rdfs:comment '''
-    Keys:
-      - Manager wants Patrons to return key to desk.
-      - Room Lock wants to keep Actants out who do not have authorization .
-      -- Room Locks have mood: how sticky or obstinate they are
-      - What about when phones replace keys?
-    Camera: Kodak wants People to buy camera.
-    Scallops:
-      - Scientist want to revitilze Scallop population.
-      -- Scientists want scallops to thrive .
-      - Fishermen want sustainable income.
-      - Towns people want more tourists (not in this example, but in another ecology example)
-    '''
-    ; rdfs:comment '''
-    Intention is about someone
-    who wants something
-    to be someplace/in a state (can we generalize it to state?)
-    ## State of Afairs
-    ## A disposition
-    ## Anything that could be set up as a relationship
-    '''
+    ; rdfs:comment ' Keys:\n - Manager wants Patrons to return key to desk.\n - Room Lock wants to keep Actants out who do not have authorization . \n -- Room Locks have mood: how sticky or obstinate they are\n - What about when phones replace keys?\n  Camera: Kodak wants People to buy camera.\n Scallops:\n - Scientist want to revitilze Scallop population.\n -- Scientists want scallops to thrive .\n - Fishermen want sustainable income.\n - Towns people want more tourists (not in this example, but in another ecology example)\n '
+    ; rdfs:comment 'Intention is about someone; who wants something; to be someplace/in a state (can we generalize it to state?)'
     ; sh:property [
       sh:path ant:fromPerspectiveOf
       ; sh:class ant:Actant
@@ -115,7 +96,7 @@ lks:ProgramShape {
         ; sh:maxCount 1
         ; rdfs:comment "The number of iterations a program goes through and the changes these iterations make"@en
     ]
-    ;sh: property [
+    ; sh:property [
       sh:path ant:hasPreviousImplementation
         ; sh:node lks:ProgramShape
         ; rdfs:comment "a link to the previous version of the program. Each iteration of the program has its own shape, a new implementation is an entirely new program"@en
