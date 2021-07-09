@@ -82,11 +82,13 @@ lks:ProgramShape {
     ; sh:property [
       sh:path ant:hasIntention
         ; sh:class ant:Intention
+        ; sh:minCount 1
         ; rdfs:comment "The intention is the goal or behaviorial change the program architect of the program wishes on the system"@en
     ]
     ; sh:property [
       sh:path ant:hasAdherent
         ; sh:class ant:Actant
+        ; sh:minCount 1
         ; rdfs:comment "Adherents include both human and non-human actors, as well as the program architect"@en
     ]
     ; sh:property [

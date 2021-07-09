@@ -394,7 +394,9 @@
 309
 310
 311
-312</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">ant:</span><span class="w"> </span><span class="nv">&lt;https://e2dubba.github.io/latours-keys/ontology/v1#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+312
+313
+314</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">ant:</span><span class="w"> </span><span class="nv">&lt;https://e2dubba.github.io/latours-keys/ontology/v1#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">sh:</span><span class="w">    </span><span class="nv">&lt;http://www.w3.org/ns/shacl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">xml:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/XML/1998/namespace&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
@@ -478,11 +480,13 @@
 <span class="w">    </span><span class="p">;</span><span class="w"> </span><span class="nn">sh:</span><span class="nt">property</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">      </span><span class="nn">sh:</span><span class="nt">path</span><span class="w"> </span><span class="nn">ant:</span><span class="nt">hasIntention</span><span class="w"></span>
 <span class="w">        </span><span class="p">;</span><span class="w"> </span><span class="nn">sh:</span><span class="nt">class</span><span class="w"> </span><span class="nn">ant:</span><span class="nt">Intention</span><span class="w"></span>
+<span class="w">        </span><span class="p">;</span><span class="w"> </span><span class="nn">sh:</span><span class="nt">minCount</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
 <span class="w">        </span><span class="p">;</span><span class="w"> </span><span class="nn">rdfs:</span><span class="nt">comment</span><span class="w"> </span><span class="s">&quot;The intention is the goal or behaviorial change the program architect of the program wishes on the system&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"></span>
 <span class="w">    </span><span class="p">]</span><span class="w"></span>
 <span class="w">    </span><span class="p">;</span><span class="w"> </span><span class="nn">sh:</span><span class="nt">property</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">      </span><span class="nn">sh:</span><span class="nt">path</span><span class="w"> </span><span class="nn">ant:</span><span class="nt">hasAdherent</span><span class="w"></span>
 <span class="w">        </span><span class="p">;</span><span class="w"> </span><span class="nn">sh:</span><span class="nt">class</span><span class="w"> </span><span class="nn">ant:</span><span class="nt">Actant</span><span class="w"></span>
+<span class="w">        </span><span class="p">;</span><span class="w"> </span><span class="nn">sh:</span><span class="nt">minCount</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
 <span class="w">        </span><span class="p">;</span><span class="w"> </span><span class="nn">rdfs:</span><span class="nt">comment</span><span class="w"> </span><span class="s">&quot;Adherents include both human and non-human actors, as well as the program architect&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"></span>
 <span class="w">    </span><span class="p">]</span><span class="w"></span>
 <span class="w">    </span><span class="p">;</span><span class="w"> </span><span class="nn">sh:</span><span class="nt">property</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
